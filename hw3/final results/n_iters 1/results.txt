@@ -1,0 +1,29 @@
+shape of train matrix (3000, 6023)
+shape of test matrix (2572, 6023)
+Time taken for 10fold cv with 'l2' penalty for 1000 iterations:0 hrs 0 mins 11.000000 sec :
+'l2' accuracy with reg = 0.10000 : 96.2333
+'l2' accuracy with reg = 1.00000 : 93.3333
+'l2' accuracy with reg = 10.00000 : 69.4000
+'l2' accuracy with reg = 0.01000 : 96.2000
+'l2' accuracy with reg = 0.00100 : 96.2000
+Time taken for 10fold cv with 'l1' penalty for 1000 iterations:0 hrs 0 mins 10.000000 sec :
+'l1'.accuracy with reg = 0.10000 : 96.1333
+'l1'.accuracy with reg = 1.00000 : 96.1333
+'l1'.accuracy with reg = 10.00000 : 96.1333
+'l1'.accuracy with reg = 0.01000 : 96.1333
+'l1'.accuracy with reg = 0.00100 : 96.1333
+Accuracy on test data with lambda : 0.001000 = 94.167963
+(3000, 6023)
+Time taken for batch gradient descent = 0.125849
+Accuracy on test data with lambda : 0.001000 = 94.129082
+Time taken for mini batch gradient descent with batch size = 50 :0.148000
+accuracy:0.5152
+Time taken for stochastic gradient descent:0.304928
+accuracy:0.5152
+Accuracy with bias and same model 86.100000
+Train accuracy with l2 [96.196296296296296, 96.188888888888897, 96.129629629629633, 93.55185185185185, 69.792592592592584] 
+Validation accuracy with l2 [94.099999999999994, 94.099999999999994, 94.0, 91.366666666666646, 68.099999999999994] 
+Train accuracy with l1 [96.196296296296296, 96.196296296296296, 96.196296296296296, 96.196296296296296, 96.196296296296296] 
+Validation accuracy with l1 [94.000000000000014, 94.000000000000014, 94.000000000000014, 94.000000000000014, 94.000000000000014]
+mini batch with batch size = 3000 and n_iters = 500 0.05149579048156738
+BGD time n_iters = 500: 0.13937020301818848
