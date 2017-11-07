@@ -1,0 +1,7 @@
+Iterative reweighted least squares training...
+The cost of 0th iteration is: 0.688766139946
+The norm2 distance of old w and new w is: 0.596164972257
+Gradient descent training is done!
+The best paramters of gd are:[[ 0.03212495  0.00207117 -0.01831819 ...,  0.00330552  0.00330947
+  -0.00565762]]
+The convergence time is 5.15314817429seconds.

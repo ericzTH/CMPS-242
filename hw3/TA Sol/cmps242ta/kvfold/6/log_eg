@@ -1,0 +1,7 @@
+EG training...
+The cost of 0th iteration is: 0.697620298214
+The norm2 distance of old w and new w is: 0.112965559785
+Gradient descent training is done!
+The best paramters of gd are:[[-0.04429801  0.086962    0.01829858 ...,  0.06116136  0.06992577
+   0.08890345]]
+The convergence time is 1.97168803215seconds.

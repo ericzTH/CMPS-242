@@ -1,0 +1,105 @@
+Bias gradient descent training...
+The cost of 0th iteration is: 2.54081714562
+The norm2 distance of old w and new w is: 18.0089042723
+The cost of 20th iteration is: inf
+The norm2 distance of old w and new w is: 372261706.272
+The cost of 40th iteration is: inf
+The norm2 distance of old w and new w is: 0.255154255744
+The cost of 60th iteration is: inf
+The norm2 distance of old w and new w is: 0.17841276396
+The cost of 80th iteration is: inf
+The norm2 distance of old w and new w is: 0.138224890909
+The cost of 100th iteration is: inf
+The norm2 distance of old w and new w is: 0.113327037626
+The cost of 120th iteration is: inf
+The norm2 distance of old w and new w is: 0.0963198814883
+The cost of 140th iteration is: inf
+The norm2 distance of old w and new w is: 0.0839316133822
+The cost of 160th iteration is: inf
+The norm2 distance of old w and new w is: 0.074486828695
+The cost of 180th iteration is: inf
+The norm2 distance of old w and new w is: 0.0670366117424
+The cost of 200th iteration is: inf
+The norm2 distance of old w and new w is: 0.0610023156512
+The cost of 220th iteration is: inf
+The norm2 distance of old w and new w is: 0.0560105357166
+The cost of 240th iteration is: inf
+The norm2 distance of old w and new w is: 0.0518092654033
+The cost of 260th iteration is: inf
+The norm2 distance of old w and new w is: 0.0482221218645
+The cost of 280th iteration is: inf
+The norm2 distance of old w and new w is: 0.0451218694781
+The cost of 300th iteration is: inf
+The norm2 distance of old w and new w is: 0.0424143608391
+The cost of 320th iteration is: 4.86748621738
+The norm2 distance of old w and new w is: 0.0400284011689
+The cost of 340th iteration is: 4.75464874063
+The norm2 distance of old w and new w is: 0.0379091312309
+The cost of 360th iteration is: 4.64808105497
+The norm2 distance of old w and new w is: 0.0360135796454
+The cost of 380th iteration is: 4.54631443642
+The norm2 distance of old w and new w is: 0.0343075965903
+The cost of 400th iteration is: 4.44946146528
+The norm2 distance of old w and new w is: 0.0327636922155
+The cost of 420th iteration is: 4.35696396332
+The norm2 distance of old w and new w is: 0.0313594824515
+The cost of 440th iteration is: 4.26821971677
+The norm2 distance of old w and new w is: 0.0300765516826
+The cost of 460th iteration is: 4.18306418945
+The norm2 distance of old w and new w is: 0.028899607205
+The cost of 480th iteration is: 4.10116035975
+The norm2 distance of old w and new w is: 0.0278158415716
+The cost of 500th iteration is: 4.0222582934
+The norm2 distance of old w and new w is: 0.0268144454391
+The cost of 520th iteration is: 3.94613616736
+The norm2 distance of old w and new w is: 0.0258862309715
+The cost of 540th iteration is: 3.87260134475
+The norm2 distance of old w and new w is: 0.0250233375452
+The cost of 560th iteration is: 3.80147287493
+The norm2 distance of old w and new w is: 0.0242189994707
+The cost of 580th iteration is: 3.73258707324
+The norm2 distance of old w and new w is: 0.0234673609742
+The cost of 600th iteration is: 3.6658024052
+The norm2 distance of old w and new w is: 0.0227633275697
+The cost of 620th iteration is: 3.60098645848
+The norm2 distance of old w and new w is: 0.0221024457195
+The cost of 640th iteration is: 3.53802165684
+The norm2 distance of old w and new w is: 0.0214808046838
+The cost of 660th iteration is: 3.47679947956
+The norm2 distance of old w and new w is: 0.0208949559197
+The cost of 680th iteration is: 3.4172209134
+The norm2 distance of old w and new w is: 0.0203418464671
+The cost of 700th iteration is: 3.35919580355
+The norm2 distance of old w and new w is: 0.019818763565
+The cost of 720th iteration is: 3.30264088341
+The norm2 distance of old w and new w is: 0.0193232883447
+The cost of 740th iteration is: 3.24747971049
+The norm2 distance of old w and new w is: 0.0188532569071
+The cost of 760th iteration is: 3.1936417029
+The norm2 distance of old w and new w is: 0.0184067274444
+The cost of 780th iteration is: 3.14106153672
+The norm2 distance of old w and new w is: 0.0179819523345
+The cost of 800th iteration is: 3.08967880096
+The norm2 distance of old w and new w is: 0.0175773543535
+The cost of 820th iteration is: 3.03943732215
+The norm2 distance of old w and new w is: 0.0171915063095
+The cost of 840th iteration is: 2.99028486651
+The norm2 distance of old w and new w is: 0.0168231135386
+The cost of 860th iteration is: 2.94217277724
+The norm2 distance of old w and new w is: 0.0164709988028
+The cost of 880th iteration is: 2.89505563113
+The norm2 distance of old w and new w is: 0.0161340892118
+The cost of 900th iteration is: 2.84889096535
+The norm2 distance of old w and new w is: 0.0158114048612
+The cost of 920th iteration is: 2.80363902294
+The norm2 distance of old w and new w is: 0.0155020489265
+The cost of 940th iteration is: 2.75926252508
+The norm2 distance of old w and new w is: 0.0152051990017
+The cost of 960th iteration is: 2.71572646811
+The norm2 distance of old w and new w is: 0.0149200995018
+The cost of 980th iteration is: 2.67299794143
+The norm2 distance of old w and new w is: 0.0146460549806
+Bias gradient descent training is done!
+The best paramters of gd are:[[-20.49582918   0.23921004   0.72743631 ...,  -0.05118551  -0.06660928
+   -0.39194336]]
+The convergence time is 755.290767908seconds.

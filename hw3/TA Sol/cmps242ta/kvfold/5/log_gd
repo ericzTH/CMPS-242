@@ -1,0 +1,9 @@
+Gradient descent training...
+The cost of 0th iteration is: 0.611595288661
+The norm2 distance of old w and new w is: 2.09028584928
+The cost of 20th iteration is: 0.552592654326
+The norm2 distance of old w and new w is: 0.0136956938201
+Gradient descent training is done!
+The best paramters of gd are:[[ 0.02991203  0.08393189  0.02407811 ..., -0.02327489 -0.03391435
+  -0.16971626]]
+The convergence time is 28.8241550922seconds.

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------------------------------------------------
+1. Using the following command to train the model(gradient descent, bias gradient descent, norm1 gradient descent,
+mini-batch gradeint descent, stochastic gradient descent, iterative reweighted least squares and exponential gradient descent):
+sudo python final_hw3_code.py
+
+2. File description:
+e.g.
+log_eg: The log (cost of each iteration, converge time and etc.) of exponential gradient
+log_diff_lambda_eg: The performance in each validation dataset and average performance for different lambdas. 
+log_eg_train_test_accuracy: The performance on the whole training dataset achieved by the retraining and the performance on the 
+test dataset using the optimal lambda.
+
+p.s. 
+gradient descent (Keep line 117 and annotate line 118 at final_hw3_code.py.)
+1-norm gradient descent(Keep line 118 and annotate line 117 at final_hw3_code.py.)
+---------------------------------------------------------------------------------------------------------------------------
+Optimal lambdas:
+gd: 0.0
+gd_bias: 0.0
+gd_norm1: 0.1
+mbgd: 0.001
+sgd: 0.0001
+irls: 0.5
+eg: 0.001
+
+Final performance:
+gd:
+0.959
+0.94867807154
+
+gd_bias:
+0.91
+0.916407465008
+
+gd_norm1:
+0.957666666667
+0.947900466563
+
+mbgd:
+0.958666666667
+0.948289269051
+
+sgd:
+0.959
+0.947900466563
+
+irls:
+0.987
+0.933514774495
+
+eg:
+0.947666666667
+0.936625194401

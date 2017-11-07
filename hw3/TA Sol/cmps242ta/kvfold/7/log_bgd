@@ -1,0 +1,7 @@
+Batch gradient descent training...
+The cost of 0th iteration is: 0.692879036023
+The norm2 distance of old w and new w is: 0.0171784239917
+Batch gradient descent training is done!
+The best paramters of gd are:[[  5.92969556e-46   3.51017939e-13   1.74729688e-38 ...,  -3.56819724e-07
+   -7.13637753e-07  -6.06870684e-12]]
+The convergence time is 1.9890871048seconds.

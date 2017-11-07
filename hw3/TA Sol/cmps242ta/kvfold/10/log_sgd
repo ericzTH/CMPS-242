@@ -1,0 +1,7 @@
+Stochastic gradient descent training...
+The cost of 0th iteration is: 0.693063456273
+The norm2 distance of old w and new w is: 0.0119187335488
+Stochastic gradient descent training is done!
+The best paramters of sgd are:[[  3.84743642e-216   4.55575023e-044   7.42327329e-118 ...,
+   -7.67503970e-036  -1.53500794e-035  -2.61114363e-016]]
+The convergence time is 1.91530704498seconds.
