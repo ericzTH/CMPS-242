@@ -1,13 +1,9 @@
-'''
-tokenize the train data
-'''
 from __future__ import division, print_function
 from collections import Counter
 from nltk.tokenize import TweetTokenizer
 from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer,TfidfVectorizer
 from sklearn.decomposition import PCA
 from sklearn.decomposition import SparsePCA
 import tensorflow as tf
@@ -26,40 +22,38 @@ train_data = pd.read_csv("train.csv",header = None)
 labels_train = pd.read_csv("labels_train_tweets.csv",header = None)
 labels_train[0] = labels_train[0].map({'HC':[1,0],'DT':[0,1]})
 
+# Training Parameters
+learning_rate = 0.005
+training_steps = 100
+batch_size = 1
+
+text = train_data[0].copy()
+stop = stopwords.words('english')
+for i in range(text.shape[0]):   
+	text[i] = ' '.join([re.sub(r'[^\w\s]','',w) for w in text[i].split() if not w in stop])
+
 #tokenizing
+vectorizer = TfidfVectorizer(stop_words = 'english')
+#temp_x = vectorizer.fit_transform(text)
+train = vectorizer.fit_transform(text).toarray()
+print("text shape",text.shape)
+#storing the vocabulary
+vocab_dict = vectorizer.vocabulary_
 
-token = []
+#matrix of one hot vectors
+h_iden = np.identity(len(vocab_dict))
+print("size of TfIdf vocabulary(Number of Unique Words from the data set): "
+	,len(vocab_dict),"\nTotal number of tweets: ",len(text))
 
-for h in range(len(train_data)):
-	token += RegexpTokenizer(r'\w+').tokenize(str(train_data[0][h]))
-
-token=(set(token))
-
-token1=list(token)
-
-
-token2=[]
-for k in token1:
-	token2.append(re.sub(r'[^\w\s]','',k))
-
-h_iden=np.identity(len(token2))
-
-
-#LSTM MODEL
+##LSTM MODEL
 
 # creating the model
-tf.reset_default_graph() 
-# Training Parameters
-learning_rate = 0.001 
-training_steps = 100 
-batch_size = 1
-display_step = 200
-
+tf.reset_default_graph()
 # Network Parameters
-num_input = len(token) # number of unique words
+num_input = len(vocab_dict) # number of unique words
 timesteps = 32 # timesteps
-num_hidden = 20 # LSTM Hidden Layer size
-hidden_unit_size = 5 # Feed Forward NN Hidden Layer size
+num_hidden = 25 # LSTM Hidden Layer size
+hidden_unit_size = 8 # Feed Forward NN Hidden Layer size
 num_classes = 2 # neural network output layer
 
 # Define weights
@@ -74,12 +68,12 @@ biases = {
 
 #create the rnn
 
-def RNN(x,weights,biases):
+def RNN(x,weights,biases,k = -1):
 
 # Prepare data shape to match `rnn` function requirements
 	# Current data input shape: (batch_size, timesteps, n_input)
 	# Required shape: 'timesteps' tensors list of shape (batch_size, n_input)
-
+	k = -1
 	# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
 	#x = tf.unstack(x,axis = 0)
 	x = tf.unstack(x, timesteps, axis = 1)
@@ -89,21 +83,18 @@ def RNN(x,weights,biases):
 	#print(lstm_cell)
 	# Get lstm cell output
 	outputs, states = tf.nn.static_rnn(lstm_cell, x, dtype=tf.float32)   
-	#outputs, states = rnn.static_rnn(lstm_cell, x, dtype=tf.float32)   
-	#print(outputs[-1],states[0][24]) #states[:][-1]
-	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(states[0][-1],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
+	#outputs, states = tf.rnn.static_rnn(lstm_cell, x, dtype=tf.float32)   
+	print("states: ",len(states),"outputs: "+str(len(outputs))) #states[:][-1]
+	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(outputs[0][k],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
 	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
 	#print(yhat)# Linear activation, using rnn inner loop last output
-	return (yhat)
-# Initialize the variables (i.e. assign their default value)
-
-
-
+	return (yhat,outputs,states)
 # graph inputs
 
 X = tf.placeholder("float", [1, timesteps, num_input]) #(one hot vector)
 Y = tf.placeholder("float", [1, num_classes])
-logits = RNN(X,weights,biases) 
+logits,outputs,states = RNN(X,weights,biases) 
+#print(outputs,states)
 prediction = tf.nn.softmax(logits)
 loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)		
@@ -112,6 +103,7 @@ correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 init = tf.global_variables_initializer()
 
+print("Eg:\nOriginal Tweet: "+str(train_data[0][10])+"\nAfter processing: "+str(text[10]))
 
 # Start training
 with tf.Session() as sess:
@@ -123,21 +115,21 @@ with tf.Session() as sess:
 			print("timesteps: "+str(timesteps)+"\nnum_hidden in LSTM: "+str(num_hidden)+"\nFeed Fwd Neural Network hidden unit size: "+str(hidden_unit_size)+"\nLearning Rate: "+str(learning_rate))
 		t = 0
 		tf.Print(logits,[logits])
-		for k in range(1000): #len(train_data)			
-			matrix1 = np.zeros(shape=(1,timesteps,len(token2)))
-			for y in range(len(train_data[0][k].split(' '))):
-				if (train_data[0][k]).split(' ')[y] in token2 :
-					#matrix1[0][:,:]=h_iden[token2.index((train_data[0][k].split(' '))[y])] # just the one hot vector 
-					matrix1[0][y]=h_iden[token2.index((train_data[0][k].split(' '))[y])] # just the one hot vector 
+		for k in range(len(text)): #len(train_data)			
+			matrix1 = np.zeros(shape=(1,timesteps,len(vocab_dict)))
+			for y in range(len(text[k].split(' '))):
+				if (text[k]).split(' ')[y] in vocab_dict :
+					#print("Word \""+str((text[k]).split(' ')[y])+"\" found in dict") 
+					matrix1[0][y]=h_iden[vocab_dict[(text[k].split(' '))[y]]] # just the one hot vector 
 					
 			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2)}) # running the nn
 			pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})
 		#pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
 			if acc == 1 :
 				t+=1			
-			if k%100==0:
+			if k%1000==0:
 				print("For tweet "+str(k)+" prediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
-		print("Training step "+str(step)+"\tacc  : %f"%(t/(k+1)))
+		print("Training step "+str(step)+" acc: %f"%(t/(k+1)))
 	end = time.time()
 	ttl = end-start
 	hrs = 0
@@ -148,12 +140,11 @@ with tf.Session() as sess:
 	secs = (ttl)%60
 	print("Optimization Finished!")
 	print("Total time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))
-
+"""
 	# Calculate accuracy for 128 mnist test images
-	#test_len = 128
-	#test_data = mnist.test.images[:test_len].reshape((-1, timesteps, num_input))
-	#test_label = mnist.test.labels[:test_len]
-	#print("Testing Accuracy:", \
-	#	sess.run(accuracy, feed_dict={X: test_data, Y: test_label}))
-
-sys.stdout = sys.__stdout__
+	test_len = 128
+	test_data = mnist.test.images[:test_len].reshape((-1, timesteps, num_input))
+	test_label = mnist.test.labels[:test_len]
+	print("Testing Accuracy:", \
+		sess.run(accuracy, feed_dict={X: test_data, Y: test_label}))
+"""

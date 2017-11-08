@@ -1,0 +1,76 @@
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 5
+Learning Rate: 0.001
+For tweet 0 prediction of HC: 0.683125 prediction of DT: 0.316875
+For tweet 100 prediction of HC: 0.680099 prediction of DT: 0.319901
+For tweet 200 prediction of HC: 0.68992 prediction of DT: 0.31008
+For tweet 300 prediction of HC: 0.698643 prediction of DT: 0.301357
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 1	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 2	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 3	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 4	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 5	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
+Training step 6	acc  : 0.694000
+For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
+For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941

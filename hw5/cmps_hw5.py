@@ -62,7 +62,7 @@ print("\nmaximum number of words in all the tweets: ",max_len)
 tf.reset_default_graph() 
 # Training Parameters
 learning_rate = 0.001
-training_steps = 1000 #10000
+training_steps = 1 #10000
 batch_size = 1 #128
 display_step = 200
 
@@ -154,12 +154,10 @@ with tf.Session() as sess:
 	for step in range(1,training_steps+1):
 		t = 0
 		tf.Print(logits,[logits])
-		for k in range(int(range(len(train_data)))):
-			
-
-			
+		for k in range(len(train_data)):			
 			matrix = np.zeros(shape=(1,timesteps,len(token2)))
 			#print(matrix1.shape)
+			print("Tweet "+str(k))
 			for y in range(len(train_data[0][k].split(' '))):
 				if (train_data[0][k]).split(' ')[y] in token2 :
 			

@@ -51,16 +51,38 @@ h_iden=np.identity(len(token2))
 tf.reset_default_graph() 
 # Training Parameters
 learning_rate = 0.001 
-training_steps = 100 
+training_steps = 10#1000 
 batch_size = 1
 display_step = 200
 
 # Network Parameters
 num_input = len(token) # number of unique words
 timesteps = 32 # timesteps
-num_hidden = 20 # LSTM Hidden Layer size
-hidden_unit_size = 5 # Feed Forward NN Hidden Layer size
+num_hidden = 25 # LSTM Hidden Layer size
+hidden_unit_size = 10 # Feed Forward NN Hidden Layer size
 num_classes = 2 # neural network output layer
+
+#represent tweets with one hot vectors of its words
+train = np.zeros(shape = (len(train_data),timesteps,len(token2)))
+for i in range(len(train)): #current tweet
+	current_tweet = np.zeros(shape = (1,timesteps,len(token2)))
+	#print(current_tweet.shape)
+	for y in range(len(train_data[0][i].split(' '))): # for each word in current tweet
+		if (train_data[0][i]).split(' ')[y] in token2 : #if the word is in token, get its one hot vector
+			current_tweet[0][y] = h_iden[token2.index((train_data[0][i].split(' '))[y])] #and append it to current tweet
+	train[i] = current_tweet
+"""
+tweet_3000 = train[3000]
+print("Tweet: "+str(train_data[0][3000]))
+print("=================================")
+print("It's one hot vector representation: ")
+print(tweet_3000.shape)
+"""
+# graph inputs
+
+X = tf.placeholder("float", [len(train_data), timesteps, num_input]) #(one hot vector)
+Y = tf.placeholder("float", [len(train_data), num_classes])
+
 
 # Define weights
 weights = {
@@ -77,10 +99,10 @@ biases = {
 def RNN(x,weights,biases):
 
 # Prepare data shape to match `rnn` function requirements
-	# Current data input shape: (batch_size, timesteps, n_input)
-	# Required shape: 'timesteps' tensors list of shape (batch_size, n_input)
+	# Current data input shape: (all tweets, timesteps, n_input)
+	# Required shape: 'timesteps' tensors list of shape (all tweets, n_input)
 
-	# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
+	# Unstack to get a list of 'timesteps' tensors of shape (all tweets, n_input)
 	#x = tf.unstack(x,axis = 0)
 	x = tf.unstack(x, timesteps, axis = 1)
 	#print(tf.Dimension(x))
@@ -95,14 +117,6 @@ def RNN(x,weights,biases):
 	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
 	#print(yhat)# Linear activation, using rnn inner loop last output
 	return (yhat)
-# Initialize the variables (i.e. assign their default value)
-
-
-
-# graph inputs
-
-X = tf.placeholder("float", [1, timesteps, num_input]) #(one hot vector)
-Y = tf.placeholder("float", [1, num_classes])
 logits = RNN(X,weights,biases) 
 prediction = tf.nn.softmax(logits)
 loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
@@ -110,9 +124,9 @@ optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 train_op = optimizer.minimize(loss_op)
 correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+# Initialize the variables (i.e. assign their default value)
 init = tf.global_variables_initializer()
-
-
 # Start training
 with tf.Session() as sess:
 	start = time.time()
@@ -121,23 +135,18 @@ with tf.Session() as sess:
 	for step in range(1,training_steps+1):
 		if step == 1:
 			print("timesteps: "+str(timesteps)+"\nnum_hidden in LSTM: "+str(num_hidden)+"\nFeed Fwd Neural Network hidden unit size: "+str(hidden_unit_size)+"\nLearning Rate: "+str(learning_rate))
-		t = 0
-		tf.Print(logits,[logits])
-		for k in range(1000): #len(train_data)			
-			matrix1 = np.zeros(shape=(1,timesteps,len(token2)))
-			for y in range(len(train_data[0][k].split(' '))):
-				if (train_data[0][k]).split(' ')[y] in token2 :
-					#matrix1[0][:,:]=h_iden[token2.index((train_data[0][k].split(' '))[y])] # just the one hot vector 
-					matrix1[0][y]=h_iden[token2.index((train_data[0][k].split(' '))[y])] # just the one hot vector 
-					
-			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2)}) # running the nn
-			pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})
-		#pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
-			if acc == 1 :
-				t+=1			
-			if k%100==0:
-				print("For tweet "+str(k)+" prediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
+		
+		# Run optimization op (backprop)
+		sess.run(train_op, feed_dict={X: train, Y: labels_train[0]})
+		if step % display_step == 0 or step == 1:
+			# Calculate batch loss and accuracy
+			loss, acc = sess.run([loss_op, accuracy], feed_dict={X: train,
+																 Y: labels_train[0]})
+			print("Step " + str(step) + ", Minibatch Loss= " + \
+				  "{:.4f}".format(loss) + ", Training Accuracy= " + \
+				  "{:.3f}".format(acc))		
 		print("Training step "+str(step)+"\tacc  : %f"%(t/(k+1)))
+			
 	end = time.time()
 	ttl = end-start
 	hrs = 0
@@ -156,4 +165,4 @@ with tf.Session() as sess:
 	#print("Testing Accuracy:", \
 	#	sess.run(accuracy, feed_dict={X: test_data, Y: test_label}))
 
-sys.stdout = sys.__stdout__
+#sys.stdout = sys.__stdout__
