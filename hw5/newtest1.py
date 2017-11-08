@@ -76,7 +76,7 @@ def RNN(x,weights,biases,last_word = -1):
 	# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
 	#x = tf.unstack(x,axis = 0)
 	#k = int(k)
-	x = tf.unstack(x, timesteps, axis = 1)
+	x = tf.unstack(x, axis = 1)
 	#last_word = last_word.eval()
 	#print(x,k)
 	#print(tf.Dimension(x))
@@ -84,26 +84,33 @@ def RNN(x,weights,biases,last_word = -1):
 	lstm_cell = tf.contrib.rnn.BasicLSTMCell(num_hidden, forget_bias=1.0)
 	#print(lstm_cell)
 	# Get lstm cell output
-	outputs, states = tf.nn.static_rnn(lstm_cell, x, dtype=tf.float32)   
-	#outputs, states = tf.rnn.static_rnn(lstm_cell, x, dtype=tf.float32)   
+	outputs, state = tf.nn.dynamic_rnn(lstm_cell,x,dtype=tf.float32)
 	#print("states: ",len(states),"outputs: "+str(len(outputs))) #states[:][-1]
 	#print("outputs Dimension",outputs[last_word].shape)
 	outputs_dict = {}
 	for i in range(len(outputs)):
 		outputs_dict[i] = outputs[i]
 	#print("\n",last_word)
-	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(outputs[last_word],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
-	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
+	#hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(outputs[last_word],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
+	#yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
 	#print(yhat)# Linear activation, using rnn inner loop last output
-	return (yhat)
+	return (outputs)
 # graph inputs
 
-X = tf.placeholder("float", [1, timesteps, num_input]) #(one hot vector)
+X = tf.placeholder("float", [1, None, num_input]) #(one hot vector)
 Y = tf.placeholder("float", [1, num_classes])
 last_word_in_tweet = tf.Variable(0)
 
-logits = RNN(X,weights,biases,last_word = last_word_in_tweet) 
-#print(outputs,states)
+#logits = RNN(X,weights,biases,last_word = last_word_in_tweet) 
+
+def get_output(X,weights,biases,last_word):
+	outputs = RNN(X,weights,biases)
+	required_output = outputs[last_word]
+	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(required_output,[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
+	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat)
+	return(yhat)
+logits = get_output(X,weights,biases,last_word)
+
 prediction = tf.nn.softmax(logits)
 #convert_variable = last_word_in_tweet.eval()
 loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
@@ -128,14 +135,15 @@ with sess.as_default():
 		t = 0
 		tf.Print(logits,[logits])
 		for k in range(len(text)): #len(train_data)			
-			matrix1 = np.zeros(shape=(1,timesteps,len(vocab_dict)))
+			matrix1 = []
 			for y in range(len(text[k].split(' '))):
 				if (text[k]).split(' ')[y] in vocab_dict :
 					#print("Word \""+str((text[k]).split(' ')[y])+"\" found in dict") 
-					matrix1[0][y]=h_iden[vocab_dict[(text[k].split(' '))[y]]] # just the one hot vector
-					last_valid_word = y 
+					matrix1.append(h_iden[vocab_dict[(text[k].split(' '))[y]]]) # just the one hot vector
+					#last_valid_word = y 
+			print("matrix1 shape",matrix1[0].shape)
 			#l_w = sess.run(convert_variable,feed_dict={last_word_in_tweet:y})
-			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2), last_word: last_valid_word}) # running the nn
+			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2), last_word: len(matrix1)-1}) # running the nn
 			pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})
 		#pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
 			if acc == 1 :
