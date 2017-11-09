@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 sys.stdout = open("print.txt","a+")
-print("\n\n\n\n\n\n\n\n New run starts here \n\n\n\n")
+print("\n\nNew run starts here \n\n")
 print("File name: newtest1.py")
-print("=======================")
+print("=======================\n\n")
 os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
 train_data = pd.read_csv("train.csv",header = None)
 #print("\nlength of training data:",len(train_data))
@@ -164,7 +164,7 @@ with sess.as_default():
 			if k%800==0:
 				print("For tweet "+str(k)+" which was said by"+str(labels_train[0][k])+"\nprediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
 		print("Training step "+str(step)+" acc: %f"%(t/(k+1)))
-		print("\n\n\n ============ End of step "+str(k)+" ============")
+		print("============ End of step "+str(step+1)+" ============\n\n\n ")
 	end = time.time()
 	ttl = end-start
 	hrs = 0
