@@ -1,76 +1,367 @@
+File name: newtest1.py
+=======================
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+outputs Dimension Tensor("rnn/transpose:0", shape=(1, ?, 25), dtype=float32)
+
+
+
+
+
+
+
+
+
+
+ last row of outputs Tensor("strided_slice_1:0", shape=(?, 25), dtype=float32) 
+
+
+
+
+
+
+
+shape after reduce_sum (1, 2)
+[]
 timesteps: 32
-num_hidden in LSTM: 20
-Feed Fwd Neural Network hidden unit size: 5
-Learning Rate: 0.001
-For tweet 0 prediction of HC: 0.683125 prediction of DT: 0.316875
-For tweet 100 prediction of HC: 0.680099 prediction of DT: 0.319901
-For tweet 200 prediction of HC: 0.68992 prediction of DT: 0.31008
-For tweet 300 prediction of HC: 0.698643 prediction of DT: 0.301357
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 1	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 2	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 3	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 4	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 5	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 600 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 700 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 800 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 900 prediction of HC: 0.731059 prediction of DT: 0.268941
-Training step 6	acc  : 0.694000
-For tweet 0 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 100 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 200 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 300 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 400 prediction of HC: 0.731059 prediction of DT: 0.268941
-For tweet 500 prediction of HC: 0.731059 prediction of DT: 0.268941
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 100
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998419 prediction of DT: 0.00158077
+Training step 1 acc: 0.700000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998704 prediction of DT: 0.00129633
+Training step 2 acc: 0.700000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998302 prediction of DT: 0.00169804
+Training step 3 acc: 0.700000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.997654 prediction of DT: 0.00234651
+Training step 4 acc: 0.800000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.997836 prediction of DT: 0.0021638
+Training step 5 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998525 prediction of DT: 0.00147464
+Training step 6 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998726 prediction of DT: 0.00127413
+Training step 7 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998816 prediction of DT: 0.00118424
+Training step 8 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998876 prediction of DT: 0.00112439
+Training step 9 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998917 prediction of DT: 0.00108316
+Training step 10 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998945 prediction of DT: 0.00105483
+Training step 11 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998968 prediction of DT: 0.0010317
+Training step 12 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.998992 prediction of DT: 0.00100782
+Training step 13 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.99901 prediction of DT: 0.000990042
+Training step 14 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999023 prediction of DT: 0.000976813
+Training step 15 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999033 prediction of DT: 0.000966742
+Training step 16 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999041 prediction of DT: 0.000958905
+Training step 17 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999047 prediction of DT: 0.000952651
+Training step 18 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999052 prediction of DT: 0.000947557
+Training step 19 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999057 prediction of DT: 0.000943333
+Training step 20 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.99906 prediction of DT: 0.000939783
+Training step 21 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999063 prediction of DT: 0.000936763
+Training step 22 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999066 prediction of DT: 0.000934171
+Training step 23 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999068 prediction of DT: 0.000931927
+Training step 24 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.99907 prediction of DT: 0.000929971
+Training step 25 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999072 prediction of DT: 0.000928258
+Training step 26 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999073 prediction of DT: 0.000926755
+Training step 27 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999075 prediction of DT: 0.000925425
+Training step 28 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999076 prediction of DT: 0.000924242
+Training step 29 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999077 prediction of DT: 0.000923185
+Training step 30 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999078 prediction of DT: 0.00092224
+Training step 31 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999079 prediction of DT: 0.000921392
+Training step 32 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999079 prediction of DT: 0.00092063
+Training step 33 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.99908 prediction of DT: 0.000919941
+Training step 34 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999081 prediction of DT: 0.000919318
+Training step 35 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999081 prediction of DT: 0.000918755
+Training step 36 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999082 prediction of DT: 0.000918241
+Training step 37 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999082 prediction of DT: 0.000917775
+Training step 38 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999083 prediction of DT: 0.000917347
+Training step 39 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999083 prediction of DT: 0.000916959
+Training step 40 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999083 prediction of DT: 0.000916601
+Training step 41 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999084 prediction of DT: 0.000916273
+Training step 42 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999084 prediction of DT: 0.000915971
+Training step 43 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999084 prediction of DT: 0.000915693
+Training step 44 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999085 prediction of DT: 0.000915436
+Training step 45 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999085 prediction of DT: 0.000915199
+Training step 46 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999085 prediction of DT: 0.00091498
+Training step 47 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999085 prediction of DT: 0.000914777
+Training step 48 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999085 prediction of DT: 0.000914588
+Training step 49 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000914412
+Training step 50 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000914249
+Training step 51 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000914097
+Training step 52 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000913955
+Training step 53 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000913821
+Training step 54 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000913696
+Training step 55 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.00091358
+Training step 56 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.00091347
+Training step 57 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000913366
+Training step 58 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.00091327
+Training step 59 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000913178
+Training step 60 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000913091
+Training step 61 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.00091301
+Training step 62 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912934
+Training step 63 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912861
+Training step 64 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912792
+Training step 65 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912727
+Training step 66 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912665
+Training step 67 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912606
+Training step 68 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.00091255
+Training step 69 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000912498
+Training step 70 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912447
+Training step 71 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912399
+Training step 72 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912354
+Training step 73 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.00091231
+Training step 74 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912269
+Training step 75 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912229
+Training step 76 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912192
+Training step 77 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912156
+Training step 78 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912121
+Training step 79 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912088
+Training step 80 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912057
+Training step 81 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912026
+Training step 82 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911998
+Training step 83 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.00091197
+Training step 84 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911944
+Training step 85 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911919
+Training step 86 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911894
+Training step 87 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911871
+Training step 88 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911848
+Training step 89 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911827
+Training step 90 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911806
+Training step 91 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911786
+Training step 92 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911767
+Training step 93 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911748
+Training step 94 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.00091173
+Training step 95 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911713
+Training step 96 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911697
+Training step 97 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.00091168
+Training step 98 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911665
+Training step 99 acc: 0.900000
+For tweet 0The question election Who put plans action make life better httpstcoXreEY9OicGwhich was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911649
+Training step 100 acc: 0.900000
+Optimization Finished!
+Total time taken = 0 hours, 0 minutes and 30.5634 seconds
+File name: newtest1.py
+=======================
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+shape after reduce_sum (1, 2)
+timesteps: 32
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 100
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.975934 prediction of DT: 0.0240658
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.614478 prediction of DT: 0.385522
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.785817 prediction of DT: 0.214183
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.992944 prediction of DT: 0.00705555
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.0327292 prediction of DT: 0.967271
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 1 acc: 0.812988
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.000912568 prediction of DT: 0.999087
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.333561 prediction of DT: 0.666439
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880363 prediction of DT: 0.119637
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.99747 prediction of DT: 0.0025304
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.012424 prediction of DT: 0.987576

@@ -70,28 +70,21 @@ biases = {
 
 def RNN(x,weights,biases,last_word = -1):
 
-	# Prepare data shape to match `rnn` function requirements
-	# Current data input shape: (batch_size, timesteps, n_input)
-	# Required shape: 'timesteps' tensors list of shape (batch_size, n_input)
-	# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
-	#x = tf.unstack(x,axis = 0)
-	#k = int(k)
 	x = tf.unstack(x, timesteps, axis = 1)
-	#last_word = last_word.eval()
-	#print(x,k)
-	#print(tf.Dimension(x))
-	# Define a lstm cell with tensorflow
 	lstm_cell = tf.contrib.rnn.BasicLSTMCell(num_hidden, forget_bias=1.0)
-	#print(lstm_cell)
+
 	# Get lstm cell output
-	outputs, states = tf.nn.static_rnn(lstm_cell, x, dtype=tf.float32)   
-	#outputs, states = tf.rnn.static_rnn(lstm_cell, x, dtype=tf.float32)   
+	outputs, states = tf.nn.static_rnn(lstm_cell, x, dtype=tf.float32)      
 	#print("states: ",len(states),"outputs: "+str(len(outputs))) #states[:][-1]
 	#print("outputs Dimension",outputs[last_word].shape)
 	outputs_dict = {}
 	for i in range(len(outputs)):
 		outputs_dict[i] = outputs[i]
-	#print("\n",last_word)
+	print("\n",last_word)
+
+	outputs_tensor = tf.convert_to_tensor(outputs)
+	target = tf.gather(outputs, outputs[last_word])
+	#last_word is a tensor and that's a problem
 	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(outputs[last_word],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
 	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
 	#print(yhat)# Linear activation, using rnn inner loop last output
@@ -100,8 +93,7 @@ def RNN(x,weights,biases,last_word = -1):
 
 X = tf.placeholder("float", [1, timesteps, num_input]) #(one hot vector)
 Y = tf.placeholder("float", [1, num_classes])
-last_word_in_tweet = tf.Variable(0)
-
+last_word_in_tweet = tf.placeholder(tf.int32)
 logits = RNN(X,weights,biases,last_word = last_word_in_tweet) 
 #print(outputs,states)
 prediction = tf.nn.softmax(logits)

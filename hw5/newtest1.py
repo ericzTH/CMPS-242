@@ -15,7 +15,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#sys.stdout = open("print.txt","w")
+sys.stdout = open("print.txt","a+")
+print("\n\n\n\n\n\n\n\n New run starts here \n\n\n\n")
+print("File name: newtest1.py")
+print("=======================")
 os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
 train_data = pd.read_csv("train.csv",header = None)
 #print("\nlength of training data:",len(train_data))
@@ -76,7 +79,7 @@ def RNN(x,weights,biases,last_word = -1):
 	# Unstack to get a list of 'timesteps' tensors of shape (batch_size, n_input)
 	#x = tf.unstack(x,axis = 0)
 	#k = int(k)
-	x = tf.unstack(x, axis = 1)
+	#x = tf.unstack(x,num = 1, axis = 1)
 	#last_word = last_word.eval()
 	#print(x,k)
 	#print(tf.Dimension(x))
@@ -86,15 +89,19 @@ def RNN(x,weights,biases,last_word = -1):
 	# Get lstm cell output
 	outputs, state = tf.nn.dynamic_rnn(lstm_cell,x,dtype=tf.float32)
 	#print("states: ",len(states),"outputs: "+str(len(outputs))) #states[:][-1]
-	#print("outputs Dimension",outputs[last_word].shape)
-	outputs_dict = {}
-	for i in range(len(outputs)):
-		outputs_dict[i] = outputs[i]
+	#print("outputs Dimension",outputs)
+	#print("\n\n\n\n\n\n\n\n\n\n last row of outputs",outputs[-1][:],"\n\n\n\n\n\n\n")
+	#outputs_dict = {}
+	#for i in range(len(outputs)):
+		#outputs_dict[i] = outputs[i]
 	#print("\n",last_word)
-	#hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(outputs[last_word],[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
-	#yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
+	#temp = outputs[-1].shape[0]
+	hidden_layer = tf.nn.relu(tf.matmul(outputs[-1][:], weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
+	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat) 
 	#print(yhat)# Linear activation, using rnn inner loop last output
-	return (outputs)
+	yhat = tf.reshape(tf.reduce_sum(yhat,axis = 0),[1,2])
+	#print("shape after reduce_sum",yhat.shape)
+	return (yhat)
 # graph inputs
 
 X = tf.placeholder("float", [1, None, num_input]) #(one hot vector)
@@ -103,13 +110,14 @@ last_word_in_tweet = tf.Variable(0)
 
 #logits = RNN(X,weights,biases,last_word = last_word_in_tweet) 
 
-def get_output(X,weights,biases,last_word):
+"""def get_output(X,weights,biases,last_word):
 	outputs = RNN(X,weights,biases)
 	required_output = outputs[last_word]
 	hidden_layer = tf.nn.relu(tf.matmul(tf.reshape(required_output,[1,num_hidden]), weights['h_l']) + biases['h_l']) # relu activation for ff nn hidden layer
 	yhat = tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out'])# final sigmoidal output (yhat)
 	return(yhat)
-logits = get_output(X,weights,biases,last_word)
+"""
+logits = RNN(X,weights,biases)
 
 prediction = tf.nn.softmax(logits)
 #convert_variable = last_word_in_tweet.eval()
@@ -128,29 +136,35 @@ with sess.as_default():
 	start = time.time()
 	# Run the initializer
 	sess.run(init) #initializing all the tf variables
-	print(sess.run(tf.report_uninitialized_variables()))
+	#print(sess.run(tf.report_uninitialized_variables()))
 	for step in range(1,training_steps+1):
 		if step == 1:
-			print("timesteps: "+str(timesteps)+"\nnum_hidden in LSTM: "+str(num_hidden)+"\nFeed Fwd Neural Network hidden unit size: "+str(hidden_unit_size)+"\nLearning Rate: "+str(learning_rate))
+			print("timesteps: "+str(timesteps)+"\nnum_hidden in LSTM: "+str(num_hidden)+
+				"\nFeed Fwd Neural Network hidden unit size: "+str(hidden_unit_size)+
+				"\nLearning Rate: "+str(learning_rate)+
+				"\nTraining Steps: "+str(training_steps))
 		t = 0
 		tf.Print(logits,[logits])
-		for k in range(len(text)): #len(train_data)			
+		for k in range(len(train_data)): #len(train_data)			
 			matrix1 = []
 			for y in range(len(text[k].split(' '))):
 				if (text[k]).split(' ')[y] in vocab_dict :
 					#print("Word \""+str((text[k]).split(' ')[y])+"\" found in dict") 
 					matrix1.append(h_iden[vocab_dict[(text[k].split(' '))[y]]]) # just the one hot vector
+			matrix1 = np.reshape(matrix1,(1,len(matrix1),11236))
+			#print(matrix1.shape)
 					#last_valid_word = y 
-			print("matrix1 shape",matrix1[0].shape)
+			#print("matrix1 shape",matrix1[0].shape)
 			#l_w = sess.run(convert_variable,feed_dict={last_word_in_tweet:y})
-			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2), last_word: len(matrix1)-1}) # running the nn
+			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2)}) # running the nn
 			pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})
 		#pred, loss, acc = sess.run([prediction,loss_op, accuracy], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
 			if acc == 1 :
 				t+=1			
-			if k%1000==0:
-				print("For tweet "+str(k)+" prediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
+			if k%800==0:
+				print("For tweet "+str(k)+" which was said by"+str(labels_train[0][k])+"\nprediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
 		print("Training step "+str(step)+" acc: %f"%(t/(k+1)))
+		print("\n\n\n ============ End of step "+str(k)+" ============")
 	end = time.time()
 	ttl = end-start
 	hrs = 0
@@ -161,6 +175,7 @@ with sess.as_default():
 	secs = (ttl)%60
 	print("Optimization Finished!")
 	print("Total time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))
+	sys.stdout = sys.__stdout__
 """
 	# Calculate accuracy for 128 mnist test images
 	test_len = 128
