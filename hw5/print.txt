@@ -1,10 +1,10 @@
 New run starts here 
 
 
-
-
 File name: newtest1.py
 =======================
+
+
 text shape (4743,)
 size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
 Total number of tweets:  4743
@@ -14,110 +14,2073 @@ Feed Fwd Neural Network hidden unit size: 8
 Learning Rate: 0.005
 Training Steps: 100
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.154499 prediction of DT: 0.845501
+prediction of HC: 0.998344 prediction of DT: 0.00165601
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.499346 prediction of DT: 0.500654
+prediction of HC: 0.647724 prediction of DT: 0.352276
 For tweet 1600 which was said by[1, 0]
-prediction of HC: 0.803263 prediction of DT: 0.196737
+prediction of HC: 0.822056 prediction of DT: 0.177944
 For tweet 2400 which was said by[1, 0]
-prediction of HC: 0.975311 prediction of DT: 0.0246888
+prediction of HC: 0.966594 prediction of DT: 0.0334061
 For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.0268833 prediction of DT: 0.973117
+prediction of HC: 0.500798 prediction of DT: 0.499202
 For tweet 4000 which was said by[0, 1]
 prediction of HC: 0.5 prediction of DT: 0.5
-Training step 1 acc: 0.809825
+Training step 1 acc: 0.716003
+============ End of step 2 ============
 
 
-
- ============ End of step 4742 ============
+ 
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.000922632 prediction of DT: 0.999077
+prediction of HC: 0.000915317 prediction of DT: 0.999085
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.164304 prediction of DT: 0.835696
+prediction of HC: 0.628793 prediction of DT: 0.371207
 For tweet 1600 which was said by[1, 0]
-prediction of HC: 0.880431 prediction of DT: 0.119569
+prediction of HC: 0.871702 prediction of DT: 0.128298
 For tweet 2400 which was said by[1, 0]
-prediction of HC: 0.997482 prediction of DT: 0.00251775
+prediction of HC: 0.997247 prediction of DT: 0.00275304
 For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.00723831 prediction of DT: 0.992762
+prediction of HC: 0.0201541 prediction of DT: 0.979846
 For tweet 4000 which was said by[0, 1]
 prediction of HC: 0.5 prediction of DT: 0.5
-Training step 2 acc: 0.890997
+Training step 2 acc: 0.867805
+============ End of step 3 ============
 
 
-
- ============ End of step 4742 ============
+ 
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.000944417 prediction of DT: 0.999056
+prediction of HC: 0.00497614 prediction of DT: 0.995024
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.334847 prediction of DT: 0.665153
+prediction of HC: 0.380169 prediction of DT: 0.619831
 For tweet 1600 which was said by[1, 0]
-prediction of HC: 0.880762 prediction of DT: 0.119238
+prediction of HC: 0.880791 prediction of DT: 0.119209
 For tweet 2400 which was said by[1, 0]
-prediction of HC: 0.997527 prediction of DT: 0.00247342
+prediction of HC: 0.9975 prediction of DT: 0.00250001
 For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.00686963 prediction of DT: 0.99313
+prediction of HC: 0.0071624 prediction of DT: 0.992838
 For tweet 4000 which was said by[0, 1]
 prediction of HC: 0.5 prediction of DT: 0.5
-Training step 3 acc: 0.911659
+Training step 3 acc: 0.909762
+============ End of step 4 ============
 
 
-
- ============ End of step 4742 ============
+ 
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.000925307 prediction of DT: 0.999075
+prediction of HC: 0.0067644 prediction of DT: 0.993236
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.244995 prediction of DT: 0.755005
+prediction of HC: 0.494331 prediction of DT: 0.505669
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997526 prediction of DT: 0.00247441
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00679428 prediction of DT: 0.993206
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 4 acc: 0.918195
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.303544 prediction of DT: 0.696456
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.214951 prediction of DT: 0.785049
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997524 prediction of DT: 0.00247586
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00709391 prediction of DT: 0.992906
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 5 acc: 0.922201
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.529615 prediction of DT: 0.470385
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.347187 prediction of DT: 0.652813
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669628 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 6 acc: 0.923044
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.758922 prediction of DT: 0.241078
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.277721 prediction of DT: 0.722279
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669793 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 7 acc: 0.925785
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993358 prediction of DT: 0.00664185
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.224188 prediction of DT: 0.775812
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670659 prediction of DT: 0.993293
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 8 acc: 0.926629
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993369 prediction of DT: 0.00663066
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.150835 prediction of DT: 0.849165
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247266
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00678549 prediction of DT: 0.993214
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 9 acc: 0.927261
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.994263 prediction of DT: 0.00573749
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.146979 prediction of DT: 0.853021
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247265
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669407 prediction of DT: 0.993306
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 10 acc: 0.926207
+============ End of step 11 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.994973 prediction of DT: 0.00502674
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.134235 prediction of DT: 0.865765
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00679193 prediction of DT: 0.993208
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 11 acc: 0.927894
+============ End of step 12 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.997186 prediction of DT: 0.00281374
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.124711 prediction of DT: 0.875289
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669569 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 12 acc: 0.928315
+============ End of step 13 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998296 prediction of DT: 0.00170436
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.123912 prediction of DT: 0.876088
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669724 prediction of DT: 0.993303
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 13 acc: 0.927894
+============ End of step 14 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998493 prediction of DT: 0.00150682
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.135854 prediction of DT: 0.864146
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00676847 prediction of DT: 0.993232
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 14 acc: 0.928737
+============ End of step 15 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.996923 prediction of DT: 0.00307729
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.185909 prediction of DT: 0.814091
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669788 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 15 acc: 0.929159
+============ End of step 16 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999083 prediction of DT: 0.00091694
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.141743 prediction of DT: 0.858257
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670093 prediction of DT: 0.993299
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 16 acc: 0.928737
+============ End of step 17 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999057 prediction of DT: 0.000943418
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120114 prediction of DT: 0.879886
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669819 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 17 acc: 0.928948
+============ End of step 18 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.00091285
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120416 prediction of DT: 0.879584
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669597 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 18 acc: 0.928526
+============ End of step 19 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911982
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.121936 prediction of DT: 0.878064
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669297 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 19 acc: 0.928526
+============ End of step 20 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911065
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120222 prediction of DT: 0.879778
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669783 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 20 acc: 0.928526
+============ End of step 21 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911171
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119611 prediction of DT: 0.880389
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669804 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 21 acc: 0.929159
+============ End of step 22 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911056
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119304 prediction of DT: 0.880696
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247279
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669767 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 22 acc: 0.927472
+============ End of step 23 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999084 prediction of DT: 0.000915473
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120944 prediction of DT: 0.879056
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00672748 prediction of DT: 0.993273
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 23 acc: 0.929370
+============ End of step 24 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911076
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.132147 prediction of DT: 0.867853
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.0067008 prediction of DT: 0.993299
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 24 acc: 0.928526
+============ End of step 25 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911116
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120344 prediction of DT: 0.879656
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669291 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 25 acc: 0.928526
+============ End of step 26 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911111
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120742 prediction of DT: 0.879258
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669521 prediction of DT: 0.993305
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 26 acc: 0.928105
+============ End of step 27 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911248
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.121415 prediction of DT: 0.878585
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669841 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 27 acc: 0.928737
+============ End of step 28 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912376
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120056 prediction of DT: 0.879944
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670757 prediction of DT: 0.993292
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 28 acc: 0.928948
+============ End of step 29 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911057
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120154 prediction of DT: 0.879846
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669519 prediction of DT: 0.993305
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 29 acc: 0.929370
+============ End of step 30 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911147
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.122833 prediction of DT: 0.877167
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670171 prediction of DT: 0.993298
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 30 acc: 0.928948
+============ End of step 31 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911209
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.122009 prediction of DT: 0.877991
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670016 prediction of DT: 0.9933
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 31 acc: 0.928948
+============ End of step 32 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911062
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120881 prediction of DT: 0.879119
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669597 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 32 acc: 0.928948
+============ End of step 33 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911052
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.126606 prediction of DT: 0.873394
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669333 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 33 acc: 0.928737
+============ End of step 34 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911052
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120203 prediction of DT: 0.879797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.0066934 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 34 acc: 0.928737
+============ End of step 35 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911054
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119425 prediction of DT: 0.880575
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247267
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669543 prediction of DT: 0.993305
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 35 acc: 0.929580
+============ End of step 36 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119224 prediction of DT: 0.880776
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669543 prediction of DT: 0.993305
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 36 acc: 0.928315
+============ End of step 37 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911063
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119387 prediction of DT: 0.880614
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669807 prediction of DT: 0.993302
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 37 acc: 0.928315
+============ End of step 38 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911054
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119235 prediction of DT: 0.880765
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670464 prediction of DT: 0.993295
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 38 acc: 0.928526
+============ End of step 39 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000911897
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120918 prediction of DT: 0.879082
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00751982 prediction of DT: 0.99248
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 39 acc: 0.927683
+============ End of step 40 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911059
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119249 prediction of DT: 0.880751
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00682172 prediction of DT: 0.993178
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 40 acc: 0.928315
+============ End of step 41 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119543 prediction of DT: 0.880457
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00671356 prediction of DT: 0.993286
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 41 acc: 0.927894
+============ End of step 42 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911056
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119365 prediction of DT: 0.880635
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00671086 prediction of DT: 0.993289
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 42 acc: 0.928526
+============ End of step 43 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119275 prediction of DT: 0.880725
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670926 prediction of DT: 0.993291
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 43 acc: 0.928105
+============ End of step 44 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.121824 prediction of DT: 0.878176
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247264
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00671141 prediction of DT: 0.993289
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 44 acc: 0.927683
+============ End of step 45 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911087
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119453 prediction of DT: 0.880547
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670136 prediction of DT: 0.993299
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 45 acc: 0.927894
+============ End of step 46 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119294 prediction of DT: 0.880706
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00677977 prediction of DT: 0.99322
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 46 acc: 0.926418
+============ End of step 47 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119317 prediction of DT: 0.880683
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.0066987 prediction of DT: 0.993301
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 47 acc: 0.926840
+============ End of step 48 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120661 prediction of DT: 0.879339
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669298 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 48 acc: 0.928948
+============ End of step 49 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119204 prediction of DT: 0.880796
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669309 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 49 acc: 0.927894
+============ End of step 50 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669603 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 50 acc: 0.927894
+============ End of step 51 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119204 prediction of DT: 0.880796
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669543 prediction of DT: 0.993305
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 51 acc: 0.927472
+============ End of step 52 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670114 prediction of DT: 0.993299
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 52 acc: 0.927050
+============ End of step 53 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670292 prediction of DT: 0.993297
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 53 acc: 0.927050
+============ End of step 54 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120388 prediction of DT: 0.879612
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00686293 prediction of DT: 0.993137
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 54 acc: 0.926629
+============ End of step 55 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911053
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669285 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 55 acc: 0.927050
+============ End of step 56 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669286 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 56 acc: 0.926840
+============ End of step 57 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669623 prediction of DT: 0.993304
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 57 acc: 0.927472
+============ End of step 58 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911052
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669916 prediction of DT: 0.993301
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 58 acc: 0.927894
+============ End of step 59 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911053
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669289 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 59 acc: 0.927472
+============ End of step 60 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00669322 prediction of DT: 0.993307
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 60 acc: 0.927050
+============ End of step 61 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00689283 prediction of DT: 0.993107
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 61 acc: 0.927472
+============ End of step 62 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00671237 prediction of DT: 0.993288
+For tweet 4000 which was said by[0, 1]
+prediction of HC: 0.5 prediction of DT: 0.5
+Training step 62 acc: 0.927472
+============ End of step 63 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911051
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119203 prediction of DT: 0.880797
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+For tweet 3200 which was said by[0, 1]
+prediction of HC: 0.00670593 prediction of DT: 0.993294
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 16
+Learning Rate: 0.005
+Training Steps: 20
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.507416 prediction of DT: 0.492584
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.523631 prediction of DT: 0.476369
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.875257 prediction of DT: 0.124743
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.977822 prediction of DT: 0.0221782
+Training step 1 acc: 0.766667
+============ End of step 2 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.749518 prediction of DT: 0.250482
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.124343 prediction of DT: 0.875657
 For tweet 1600 which was said by[1, 0]
 prediction of HC: 0.880795 prediction of DT: 0.119205
 For tweet 2400 which was said by[1, 0]
-prediction of HC: 0.997527 prediction of DT: 0.00247276
-For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.00692317 prediction of DT: 0.993077
-For tweet 4000 which was said by[0, 1]
-prediction of HC: 0.5 prediction of DT: 0.5
-Training step 4 acc: 0.916719
+prediction of HC: 0.997527 prediction of DT: 0.00247311
+Training step 2 acc: 0.913000
+============ End of step 3 ============
 
 
-
- ============ End of step 4742 ============
+ 
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.0151171 prediction of DT: 0.984883
+prediction of HC: 0.98487 prediction of DT: 0.0151304
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.380384 prediction of DT: 0.619616
-For tweet 1600 which was said by[1, 0]
-prediction of HC: 0.880792 prediction of DT: 0.119208
-For tweet 2400 which was said by[1, 0]
-prediction of HC: 0.997526 prediction of DT: 0.00247452
-For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.00669327 prediction of DT: 0.993307
-For tweet 4000 which was said by[0, 1]
-prediction of HC: 0.5 prediction of DT: 0.5
-Training step 5 acc: 0.922623
-
-
-
- ============ End of step 4742 ============
-For tweet 0 which was said by[1, 0]
-prediction of HC: 0.123733 prediction of DT: 0.876267
-For tweet 800 which was said by[0, 1]
-prediction of HC: 0.306872 prediction of DT: 0.693128
+prediction of HC: 0.196603 prediction of DT: 0.803397
 For tweet 1600 which was said by[1, 0]
 prediction of HC: 0.880796 prediction of DT: 0.119204
 For tweet 2400 which was said by[1, 0]
 prediction of HC: 0.997527 prediction of DT: 0.00247274
-For tweet 3200 which was said by[0, 1]
-prediction of HC: 0.00706689 prediction of DT: 0.992933
-For tweet 4000 which was said by[0, 1]
-prediction of HC: 0.5 prediction of DT: 0.5
-Training step 6 acc: 0.924942
+Training step 3 acc: 0.931667
+============ End of step 4 ============
 
 
-
- ============ End of step 4742 ============
+ 
 For tweet 0 which was said by[1, 0]
-prediction of HC: 0.950164 prediction of DT: 0.0498355
+prediction of HC: 0.992982 prediction of DT: 0.00701784
 For tweet 800 which was said by[0, 1]
-prediction of HC: 0.24165 prediction of DT: 0.75835
+prediction of HC: 0.159095 prediction of DT: 0.840905
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880796 prediction of DT: 0.119204
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247266
+Training step 4 acc: 0.940667
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99328 prediction of DT: 0.00672035
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.449264 prediction of DT: 0.550736
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880796 prediction of DT: 0.119204
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 5 acc: 0.943333
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993338 prediction of DT: 0.00666256
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.310415 prediction of DT: 0.689585
 For tweet 1600 which was said by[1, 0]
 prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 6 acc: 0.946333
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993099 prediction of DT: 0.0069006
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.192641 prediction of DT: 0.807359
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 7 acc: 0.949667
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.997456 prediction of DT: 0.00254361
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.125317 prediction of DT: 0.874683
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 8 acc: 0.949667
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.997764 prediction of DT: 0.00223639
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119545 prediction of DT: 0.880455
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 9 acc: 0.949667
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999054 prediction of DT: 0.000946235
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119317 prediction of DT: 0.880683
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 10 acc: 0.951000
+============ End of step 11 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912024
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.121152 prediction of DT: 0.878848
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 11 acc: 0.951667
+============ End of step 12 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99906 prediction of DT: 0.000939615
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119212 prediction of DT: 0.880788
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 12 acc: 0.952000
+============ End of step 13 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.00091246
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.488056 prediction of DT: 0.511944
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 13 acc: 0.950000
+============ End of step 14 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000913213
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.498425 prediction of DT: 0.501575
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 14 acc: 0.952000
+============ End of step 15 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999086 prediction of DT: 0.000914365
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.49762 prediction of DT: 0.50238
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 15 acc: 0.952000
+============ End of step 16 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999088 prediction of DT: 0.000912019
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119416 prediction of DT: 0.880584
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 16 acc: 0.952000
+============ End of step 17 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911121
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.140378 prediction of DT: 0.859622
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 17 acc: 0.951000
+============ End of step 18 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911062
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119332 prediction of DT: 0.880668
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 18 acc: 0.952333
+============ End of step 19 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999089 prediction of DT: 0.000911078
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120225 prediction of DT: 0.879775
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 19 acc: 0.952000
+============ End of step 20 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999081 prediction of DT: 0.00091924
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.119218 prediction of DT: 0.880782
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 20 acc: 0.953000
+============ End of step 21 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 31 minutes and 13.0322 seconds
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 16
+Learning Rate: 0.005
+Training Steps: 1
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.991415 prediction of DT: 0.00858526
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.570178 prediction of DT: 0.429822
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.834469 prediction of DT: 0.165531
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.993936 prediction of DT: 0.00606425
+Training step 1 acc: 0.788000
+============ End of step 2 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 1 minutes and 32.6600 seconds
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 16
+Learning Rate: 0.005
+Training Steps: 1
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.381067 prediction of DT: 0.618933
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.526842 prediction of DT: 0.473158
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.774631 prediction of DT: 0.225369
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.97835 prediction of DT: 0.0216503
+Training step 1 acc: 0.796667
+============ End of step 2 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 1 minutes and 31.9308 seconds
+Validation Accuracy: 0.8450946643717728
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 25
+Feed Fwd Neural Network hidden unit size: 16
+Learning Rate: 0.005
+Training Steps: 10
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.945163 prediction of DT: 0.054837
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.569536 prediction of DT: 0.430464
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.788924 prediction of DT: 0.211076
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.985613 prediction of DT: 0.0143867
+Training step 1 acc: 0.798667
+============ End of step 2 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.799483 prediction of DT: 0.200517
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.306969 prediction of DT: 0.693031
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880786 prediction of DT: 0.119214
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997519 prediction of DT: 0.00248141
+Training step 2 acc: 0.918000
+============ End of step 3 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.948484 prediction of DT: 0.0515157
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.224041 prediction of DT: 0.775959
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880796 prediction of DT: 0.119204
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 3 acc: 0.938000
+============ End of step 4 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99054 prediction of DT: 0.00946001
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.218257 prediction of DT: 0.781743
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880796 prediction of DT: 0.119204
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 4 acc: 0.944000
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993351 prediction of DT: 0.00664913
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.231226 prediction of DT: 0.768774
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 5 acc: 0.944333
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993324 prediction of DT: 0.00667582
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.133434 prediction of DT: 0.866566
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 6 acc: 0.946333
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99335 prediction of DT: 0.00665045
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.13166 prediction of DT: 0.86834
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 7 acc: 0.948333
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.995526 prediction of DT: 0.0044738
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120311 prediction of DT: 0.879689
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 8 acc: 0.949667
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998962 prediction of DT: 0.00103813
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.416638 prediction of DT: 0.583362
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 9 acc: 0.950667
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999083 prediction of DT: 0.000916723
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.130227 prediction of DT: 0.869773
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 10 acc: 0.952000
+============ End of step 11 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 15 minutes and 52.8535 seconds
+Validation Accuracy: 0.8181296615031555
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 10
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.0466229 prediction of DT: 0.953377
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.501891 prediction of DT: 0.498109
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.799795 prediction of DT: 0.200205
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.989998 prediction of DT: 0.0100025
+Training step 1 acc: 0.803333
+============ End of step 2 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.769202 prediction of DT: 0.230798
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.172626 prediction of DT: 0.827374
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.88075 prediction of DT: 0.11925
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997508 prediction of DT: 0.00249196
+Training step 2 acc: 0.912333
+============ End of step 3 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.959397 prediction of DT: 0.0406025
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.146131 prediction of DT: 0.853869
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880769 prediction of DT: 0.119231
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247268
+Training step 3 acc: 0.937667
+============ End of step 4 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993222 prediction of DT: 0.00677838
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.195379 prediction of DT: 0.804621
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880793 prediction of DT: 0.119207
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247271
+Training step 4 acc: 0.943333
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.996741 prediction of DT: 0.00325953
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.147643 prediction of DT: 0.852357
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+Training step 5 acc: 0.947333
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998993 prediction of DT: 0.00100732
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.155933 prediction of DT: 0.844067
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247264
+Training step 6 acc: 0.949000
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999048 prediction of DT: 0.000952295
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.158662 prediction of DT: 0.841338
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+Training step 7 acc: 0.948667
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998569 prediction of DT: 0.00143142
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.124173 prediction of DT: 0.875827
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247265
+Training step 8 acc: 0.950333
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998975 prediction of DT: 0.00102462
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.120012 prediction of DT: 0.879988
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247263
+Training step 9 acc: 0.951333
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99907 prediction of DT: 0.000930462
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.215137 prediction of DT: 0.784863
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880797 prediction of DT: 0.119203
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997527 prediction of DT: 0.00247262
+Training step 10 acc: 0.951000
+============ End of step 11 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 12 minutes and 55.8473 seconds
+Validation Accuracy: 0.8261617900172117
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 10
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.835267 prediction of DT: 0.164733
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.583621 prediction of DT: 0.416379
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.793829 prediction of DT: 0.206171
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.955068 prediction of DT: 0.0449321
+Training step 1 acc: 0.783000
+============ End of step 2 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.874656 prediction of DT: 0.125344
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.213647 prediction of DT: 0.786353
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.874429 prediction of DT: 0.125571
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997215 prediction of DT: 0.00278532
+Training step 2 acc: 0.912000
+============ End of step 3 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.976714 prediction of DT: 0.0232863
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.225159 prediction of DT: 0.774841
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.879599 prediction of DT: 0.120401
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997419 prediction of DT: 0.00258139
+Training step 3 acc: 0.935000
+============ End of step 4 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993246 prediction of DT: 0.00675437
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.405762 prediction of DT: 0.594237
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880405 prediction of DT: 0.119595
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997489 prediction of DT: 0.00251077
+Training step 4 acc: 0.943333
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.993643 prediction of DT: 0.00635737
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.270291 prediction of DT: 0.729708
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.88068 prediction of DT: 0.11932
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997505 prediction of DT: 0.00249483
+Training step 5 acc: 0.947000
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.9976 prediction of DT: 0.00240019
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.412938 prediction of DT: 0.587062
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880704 prediction of DT: 0.119296
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997516 prediction of DT: 0.00248415
+Training step 6 acc: 0.949000
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999007 prediction of DT: 0.000993259
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.14343 prediction of DT: 0.85657
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880682 prediction of DT: 0.119318
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997519 prediction of DT: 0.00248125
+Training step 7 acc: 0.950667
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999076 prediction of DT: 0.000924341
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.127502 prediction of DT: 0.872499
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880725 prediction of DT: 0.119274
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997521 prediction of DT: 0.00247942
+Training step 8 acc: 0.951667
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999068 prediction of DT: 0.000931574
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.310096 prediction of DT: 0.689904
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880769 prediction of DT: 0.119231
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997523 prediction of DT: 0.00247735
+Training step 9 acc: 0.952667
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999087 prediction of DT: 0.000913065
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.15507 prediction of DT: 0.84493
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880778 prediction of DT: 0.119222
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997525 prediction of DT: 0.00247522
+Training step 10 acc: 0.951667
+============ End of step 11 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 12 minutes and 56.7814 seconds
+Validation Accuracy: 0.825588066551922
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 10
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.269535 prediction of DT: 0.730465
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.498972 prediction of DT: 0.501028
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.73461 prediction of DT: 0.26539
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.969813 prediction of DT: 0.0301867
+Training step 1 acc: 0.777333
+============ End of step 2 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.767128 prediction of DT: 0.232872
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.273102 prediction of DT: 0.726898
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.866093 prediction of DT: 0.133907
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.996458 prediction of DT: 0.00354225
+Training step 2 acc: 0.906333
+============ End of step 3 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.983604 prediction of DT: 0.0163964
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.265254 prediction of DT: 0.734746
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.877048 prediction of DT: 0.122952
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997264 prediction of DT: 0.00273578
+Training step 3 acc: 0.938333
+============ End of step 4 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.992222 prediction of DT: 0.00777814
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.286211 prediction of DT: 0.713789
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.879483 prediction of DT: 0.120517
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997455 prediction of DT: 0.00254515
+Training step 4 acc: 0.945333
+============ End of step 5 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.992882 prediction of DT: 0.00711747
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.195132 prediction of DT: 0.804868
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880227 prediction of DT: 0.119773
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997488 prediction of DT: 0.00251207
+Training step 5 acc: 0.948000
+============ End of step 6 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.996603 prediction of DT: 0.00339652
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.155863 prediction of DT: 0.844137
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880536 prediction of DT: 0.119464
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997513 prediction of DT: 0.00248741
+Training step 6 acc: 0.949333
+============ End of step 7 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.998742 prediction of DT: 0.00125841
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.126215 prediction of DT: 0.873785
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880645 prediction of DT: 0.119355
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997513 prediction of DT: 0.00248696
+Training step 7 acc: 0.950333
+============ End of step 8 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99897 prediction of DT: 0.00102964
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.132459 prediction of DT: 0.867541
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880651 prediction of DT: 0.119349
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997517 prediction of DT: 0.00248319
+Training step 8 acc: 0.951333
+============ End of step 9 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.99891 prediction of DT: 0.00108988
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.123629 prediction of DT: 0.876371
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880713 prediction of DT: 0.119287
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997521 prediction of DT: 0.00247857
+Training step 9 acc: 0.952000
+============ End of step 10 ============
+
+
+ 
+For tweet 0 which was said by[1, 0]
+prediction of HC: 0.999059 prediction of DT: 0.000940649
+For tweet 800 which was said by[0, 1]
+prediction of HC: 0.121828 prediction of DT: 0.878172
+For tweet 1600 which was said by[1, 0]
+prediction of HC: 0.880761 prediction of DT: 0.119239
+For tweet 2400 which was said by[1, 0]
+prediction of HC: 0.997524 prediction of DT: 0.00247591
+Training step 10 acc: 0.952000
+============ End of step 11 ============
+
+
+ 
+Optimization Finished!
+Total time taken = 0 hours, 13 minutes and 14.8840 seconds
+Validation Accuracy: 0.8278829604130808
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 10
+Sigmoidal activation in all layers
+Training step 1 acc: 0.800548
+============ End of step 1 ============
+
+
+ 
+
+
+New run starts here 
+
+
+File name: newtest1.py
+=======================
+
+
+text shape (4743,)
+size of TfIdf vocabulary(Number of Unique Words from the data set):  11236 
+Total number of tweets:  4743
+timesteps: 32
+num_hidden in LSTM: 20
+Feed Fwd Neural Network hidden unit size: 8
+Learning Rate: 0.005
+Training Steps: 10
+Sigmoidal activation in all layers
+Training step 1 acc: 0.808138
+
+Training step 2 acc: 0.888256
+
+Training step 3 acc: 0.911238
+
+Training step 4 acc: 0.919671
+
+Training step 5 acc: 0.920725
+
+Training step 6 acc: 0.923888
+
+Training step 7 acc: 0.925575
+
+Training step 8 acc: 0.926629
+
+Training step 9 acc: 0.925996
+
+Training step 10 acc: 0.926207
+
+Optimization Finished!
+Total time taken = 0 hours, 20 minutes and 41.2348 seconds
