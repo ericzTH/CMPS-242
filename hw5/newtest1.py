@@ -27,7 +27,7 @@ labels_train[0] = labels_train[0].map({'HC':[1,0],'DT':[0,1]})
 
 # Training Parameters
 learning_rate = 0.005
-training_steps = 10
+training_steps = 100
 batch_size = 1
 
 text = train_data[0].copy()
@@ -103,28 +103,32 @@ with tf.name_scope('inputs'):
 	X = tf.placeholder("float", [1, None, num_input]) #(one hot vector)
 	Y = tf.placeholder("float", [1, num_classes])
 	#last_word_in_tweet = tf.Variable(0)
-with tf.name_scope('functions'):
+with tf.name_scope('xEntropy'):
 	logits = RNN(X,weights,biases)
-	prediction = tf.nn.softmax(logits)
 	loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
+	prediction = tf.nn.softmax(logits)
+
+with tf.name_scope('optimizer'):
 	optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)		
 	train_op = optimizer.minimize(loss_op)
-	correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
-	accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
-tf.summary.scalar("loss",loss_op)
-tf.summary.scalar("prediction HC",prediction[0][0])
-tf.summary.scalar("prediction DT",prediction[0][1])
-tf.summary.scalar("Accuracy",accuracy)
-sess = tf.Session()
-summary_op = tf.summary.merge_all()
 
+with tf.name_scope('Accuracy'):
+	#correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
+	accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1)), tf.float32))
+
+
+#tf.summary.scalar("Accuracy",accuracy)
+summary_op = tf.summary.merge([tf.summary.scalar("Clinton",prediction[0][0]),tf.summary.scalar("Trump",prediction[0][1])])
+
+summary_op2 = tf.summary.merge([tf.summary.scalar("loss",loss_op)])
+sess = tf.Session()
 init = tf.global_variables_initializer()
 # Start training
 with sess.as_default():
 	start = time.time()
 	# Run the initializer
 	sess.run(init) #initializing all the tf variables
-	writer = tf.summary.FileWriter('.', graph = tf.get_default_graph())
+	writer = tf.summary.FileWriter('M:\Course stuff\Fall 17\CMPS 242\hw5\logs', graph = tf.get_default_graph())
 	#print(sess.run(tf.report_uninitialized_variables()))
 	print("timesteps: "+str(timesteps)+"\nnum_hidden in LSTM: "+str(num_hidden)+
 		"\nFeed Fwd Neural Network hidden unit size: "+str(hidden_unit_size)+
@@ -134,7 +138,8 @@ with sess.as_default():
 	for step in range(1,training_steps+1):
 		t = 0
 		tf.Print(logits,[logits])
-		for k in range(len(train_data)): #len(train_data)			
+
+		for k in range(len(train_data)):			
 		#for k in range(3000):
 			matrix1 = []
 			for y in range(len(text[k].split(' '))):
@@ -142,14 +147,20 @@ with sess.as_default():
 					#print("Word \""+str((text[k]).split(' ')[y])+"\" found in dict") 
 					matrix1.append(h_iden[vocab_dict[(text[k].split(' '))[y]]]) # append ohv of each word in the current tweet
 			matrix1 = np.reshape(matrix1,(1,len(matrix1),11236))
-			sess.run(train_op, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2)}) # train the model for each tweet (not batch of tweets)
-			pred, loss, acc, summary = sess.run([prediction,loss_op, accuracy,summary_op], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
-			writer.add_summary(summary,step*1+k)
+			#sess.run(, feed_dict={X: matrix1, Y: np.asarray(labels_train[0][k]).reshape(1,2)}) # train the model for each tweet (not batch of tweets)
+			_, pred, loss, acc, summary_pred,summary_loss = sess.run([train_op,prediction,loss_op, accuracy,summary_op,summary_op2], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][k]).reshape(1,2)})	
+			writer.add_summary(summary_pred,k)
+			writer.add_summary(summary_loss,step)
 			if acc == 1 :
 				t+=1			
 			#if k%800==0:
 				#print("For tweet "+str(k)+" which was said by"+str(labels_train[0][k])+"\nprediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
 		print("Training step "+str(step)+" acc: %f"%(t/(k+1))+"\n")
+		if loss <= 0.0005:
+			break
+		 
+		else:
+			continue
 		#print("============ End of step "+str(step)+" ============\n\n\n ")
 	end = time.time()
 	ttl = end-start
