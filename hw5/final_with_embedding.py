@@ -15,10 +15,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#sys.stdout = open("final.txt","a+")
+
 #print("\n\nNew run starts here \n\n")
 #print("File name: newtest1.py")
-print("=======================\n\n")
+#print("=======================\n\n")
 os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
 train_data = pd.read_csv("train.csv",header = None)
 #print("\nlength of training data:",len(train_data))
@@ -40,7 +40,7 @@ for i in range(test_text.shape[0]):
 	test_text[i] = ' '.join([re.sub(r'[^\w\s]','',w) for w in test_text[i].split() if not w in stop])
 """
 #tokenizing
-vectorizer = TfidfVectorizer()
+vectorizer = TfidfVectorizer(stop_words = 'english')
 #temp_x = vectorizer.fit_transform(text)
 train = vectorizer.fit_transform(text).toarray()
 #print("text shape\n",text.shape)
@@ -50,8 +50,7 @@ vocab_dict = vectorizer.vocabulary_
 
 #matrix of one hot vectors
 h_iden = np.identity(len(vocab_dict))
-#print("size of TfIdf vocabulary(Number of Unique Words from the data set): "
-#	,len(vocab_dict),"\nTotal number of tweets: ",len(text),"\nTotal tweets in test: ",len(test_text))
+print("size of TfIdf vocabulary(Number of Unique Words from the data set): ",len(vocab_dict),"\nTotal number of tweets: ",len(text),"\nTotal tweets in test: ",len(test_text))
 
 ##LSTM MODEL
 
@@ -66,8 +65,8 @@ num_classes = 2 # neural network output layer
 
 # Define weights
 with tf.name_scope('FFNN_Parameters'):
-	hidden_layer_1 = tf.Variable(tf.random_normal([num_hidden, hidden_unit_size]))#*0.01/np.sqrt(num_hidden)
-	hidden_out = tf.Variable(tf.random_normal([hidden_unit_size, num_classes]))
+	hidden_layer_1 = tf.Variable(tf.random_normal([num_hidden, hidden_unit_size]))*0.01/np.sqrt(num_hidden)
+	hidden_out = tf.Variable(tf.random_normal([hidden_unit_size, num_classes]))*0.01/np.sqrt(hidden_unit_size)
 	biases1 = tf.Variable(tf.random_normal([hidden_unit_size]))
 	biases_out = tf.Variable(tf.random_normal([num_classes]))
 	weights = {
@@ -90,14 +89,14 @@ def RNN(x,weights,biases,last_word = -1):
 	outputs, state = tf.nn.dynamic_rnn(lstm_cell,x,dtype=tf.float32)
 	# relu activation for ff nn hidden layer
 	#print("shape of outputs",outputs.shape)
-	hidden_layer = tf.nn.dropout(tf.nn.relu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.7)
+	hidden_layer = tf.nn.dropout(tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.7)
 	# final sigmoidal output (yhat)
-	yhat = tf.reshape(tf.reduce_sum(tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out']),axis = 0),[1,2]) 	
+	yhat = tf.reshape(tf.reduce_sum(tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out']),axis = 0),[1,2])
 	return (yhat)
 embedding_dims = 10
 # graph inputs
 with tf.name_scope('Embedding_matrix') :
-	embedding_matrix = tf.Variable(tf.random_normal([len(vocab_dict),embedding_dims]))
+	embedding_matrix = tf.Variable(tf.random_normal([len(vocab_dict),embedding_dims]))#*0.01
 with tf.name_scope('inputs'):
 	#X = tf.placeholder("float", [1, None, num_input]) #(one hot vector)
 	X = tf.placeholder("float", [1, None, 10]) #(one hot vector)
@@ -135,11 +134,11 @@ with sess.as_default():
 	#	"\nLearning Rate: "+str(learning_rate)+
 	#	"\nTraining Steps: "+str(training_steps)+
 	#	"\nelu activation in all layers")
-	for step in range(10):
+	for step in range(50):
 	#for step in range(1,2):
 		t = 0
 		#for tweet in range(500):
-		for tweet in range(len(train_data)):
+		for tweet in range(5):
 			valid_words_indices = []
 			for word in range(len(text[tweet].split(' '))):
 				if text[tweet].split(' ')[word] in vocab_dict:
@@ -148,6 +147,7 @@ with sess.as_default():
 			emb_mat = tf.gather(embedding_matrix,indices_tensor, axis = 0)
 			#print("emb_mat shape",emb_mat)
 			m2 = sess.run(emb_mat)
+			print(m2.shape,m2)
 			#print("run of emb_mat",m2.shape)
 			matrix1 = np.reshape(m2,(1,m2.shape[0],m2.shape[1]))
 			#print("\n\nembedding matrix size to be fed into LSTM cell\n",matrix1.shape)
@@ -179,7 +179,8 @@ with sess.as_default():
 #### Testing ####
 	pred_hc = []
 	pred_dt = []
-		#for tweet in range(5):
+	start = time.time()
+	#for tweet in range(5):
 	for tweet in range(len(test_data)):
 		valid_words_indices = []
 		for word in range(len(test_text[tweet].split(' '))):
@@ -196,10 +197,19 @@ with sess.as_default():
 		pred_dt.append(temp[0][1])
 		#logits_test = sess.run([logits], feed_dict={X: matrix_test})
 		#store_logits.append(logits_test) # yhats for all test tweet
-
+	end = time.time()
+	ttl = end-start
+	hrs = 0
+	mins = (ttl)/60
+	if mins > 60:
+		hrs = mins/60
+		mins %= 60
+	secs = (ttl)%60
+	print("predicting the data finished!\n")
+	print("time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))	
+	sys.stdout = open("preds_test.txt","w")
 	for i in range(len(pred_hc)):
 		print(pred_hc[i],",",pred_dt[i])
-
 
 sys.stdout = sys.__stdout__
 """
