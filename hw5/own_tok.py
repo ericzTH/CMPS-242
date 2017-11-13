@@ -1,60 +1,53 @@
 from __future__ import division, print_function
 from collections import Counter
 from nltk.tokenize import TweetTokenizer
-from nltk.corpus import stopwords
-from nltk.tokenize import RegexpTokenizer
-from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer,TfidfVectorizer
+from sklearn.decomposition import PCA, SparsePCA
+from sklearn.decomposition import SparsePCA
 import tensorflow as tf
 from tensorflow.contrib import rnn
 import codecs,os,re,time,sys
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-
-if os.name != 'posix':
-	os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
+#loading training and test sets
+os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
 train_data = pd.read_csv("train.csv",header = None)
+print("size of training data:",len(train_data))
+
 labels_train = pd.read_csv("labels_train_tweets.csv",header = None)
 labels_train[0] = labels_train[0].map({'HC':[1,0],'DT':[0,1]})
-test_data = pd.read_csv("test.csv")
+
+text = train_data[0].copy()
+text2 = train_data[0].copy()
+for i in range(len(text2)):
+	text2[i] = text2[i].split(' ')
+len(text2)
+
+# TOKENIZING #
+vocab_dict = {}
+temp_list = []
+for i in range(len(text2)):
+	for j in range(len(text2[i])):
+		temp_list.append(text2[i][j])
+print("length of temporary list of all words",len(temp_list))
+for i in range(len(temp_list)):
+	if temp_list[i] not in vocab_dict:
+		vocab_dict[temp_list[i]] = i
+print("size of vocabulary",len(vocab_dict))
 
 # Training Parameters
 learning_rate = 0.001
 training_steps = 300
 batch_size = 1
 
-text = train_data[0].copy()
-test_text = test_data['tweet'].copy()
-
-def create_token_lexicon(trains):
-	print("Creating lexicon.")
-	tknzr = TweetTokenizer()
-	lexicon = set()
-	for i in range(len(trains)):
-		lexicon.update(tknzr.tokenize(trains[i]))
-	w_counts = Counter(lexicon)
-	print("Lexicon has ", len(lexicon), " entries")
-	#print(w_counts)
-	return list(lexicon)
-token_list = create_token_lexicon(text)
-vocab_dict = {}
-for i in range(len(token_list)):
-	if token_list[i] not in vocab_dict:
-		vocab_dict[token_list[i]] = i
-vocab_dict['today.'] = vocab_dict['today']
-h_iden = np.identity(len(vocab_dict))
-print("size of TfIdf vocabulary(Number of Unique Words from the data set): ",len(vocab_dict),
-	"\nTotal number of tweets: ",len(text),"\nTotal tweets in test: ",len(test_text))
-
-##LSTM MODEL
-
-# creating the model
 tf.reset_default_graph()
 # Network Parameters
 num_input = len(vocab_dict) # number of unique words
 #timesteps = 32 # timesteps
-num_hidden = 32 # LSTM Hidden Layer size
-hidden_unit_size = 16 # Feed Forward NN Hidden Layer size
+num_hidden = 16 # LSTM Hidden Layer size
+hidden_unit_size = 8 # Feed Forward NN Hidden Layer size
 num_classes = 2 # neural network output layer
 
 # Define weights
@@ -73,7 +66,6 @@ with tf.name_scope('rnn'):
 		'out': biases_out
 	}
 
-
 def RNN(indices,weights,biases):
 	#print(tf.shape(indices))
 	embedding_mat = tf.get_variable('embedding_matrix',[len(vocab_dict),embedding_dims])
@@ -82,23 +74,26 @@ def RNN(indices,weights,biases):
 	#x = tf.transpose(x)	
 	# Get lstm cell output
 	outputs, state = tf.nn.dynamic_rnn(lstm_cell,x,dtype=tf.float32)
-	# relu activation for ff nn hidden layer
-	print("shape of outputs",outputs.shape)
-	#hidden_layer = tf.nn.dropout(tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.5)
+	#print("shape of outputs",outputs.shape)
 	hidden_layer = tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l'])
+	#hidden_layer = tf.nn.dropout(tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.7)
 	# final sigmoidal output (yhat)
 	yhat = tf.reshape(tf.reduce_sum(tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out']),axis = 0),[1,2])
 	return (yhat)	
-embedding_dims = 8
+embedding_dims = 25
 # graph inputs
 
 with tf.name_scope('inputs'):
 	indices = tf.placeholder(tf.int32,shape=[None,1])
+	#len_indices = tf.placeholder()
+	#X = tf.placeholder("float", [1, None, num_input]) #(one hot vector)
+	#X = tf.placeholder("float", [1, None, embedding_dims]) #(one hot vector)
 	Y = tf.placeholder("float", [1, num_classes])
 	#last_word_in_tweet = tf.Variable(0)
 with tf.name_scope('xEntropy'):
 	logits = RNN(indices,weights,biases)
 	loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
+	
 	prediction = tf.nn.softmax(logits)
 
 with tf.name_scope('optimizer'):
@@ -109,8 +104,6 @@ with tf.name_scope('Accuracy'):
 	#correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
 	accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1)), tf.float32))
 
-
-#tf.summary.scalar("Accuracy",accuracy)
 summary_op = tf.summary.merge([tf.summary.scalar("Clinton",prediction[0][0]),tf.summary.scalar("Trump",prediction[0][1])])
 
 summary_op2 = tf.summary.merge([tf.summary.scalar("loss",loss_op)])
@@ -123,24 +116,26 @@ with sess.as_default():
 	sess.run(init) #initializing all the tf variables
 	writer = tf.summary.FileWriter('logs', graph = tf.get_default_graph())
 	#for step in range(training_steps):
-	for step in range(50):
+	for step in range(5):
 		t = 0
 		failed_tweets = 0
 		step_start = time.time()
-		#for tweet in range(10):
+		#for tweet in range(100):
 		for tweet in range(len(train_data)):
 			#print(tweet)
 			valid_words_indices = []
 			for word in range(len(text[tweet].split(' '))):
 				if text[tweet].split(' ')[word] in vocab_dict:
 					valid_words_indices.append(vocab_dict[text[tweet].split(' ')[word]])
-
-			
-			if len(valid_words_indices)!=0:
+			if len(valid_words_indices) == 0:
 				failed_tweets += 1
+			if len(valid_words_indices)!=0:
 				valid_words_indices = np.asarray(valid_words_indices).reshape(len(valid_words_indices),1)
-				_,loss, acc, summary_loss = sess.run([train_op,loss_op, accuracy,summary_op2], feed_dict={indices: valid_words_indices,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
-			#_, pred, loss, acc, summary_pred, summary_loss = sess.run([train_op,prediction,loss_op, accuracy,summary_op,summary_op2], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
+				#_,loss, acc, summary_loss = sess.run([train_op,loss_op, accuracy,summary_op2], feed_dict={indices: valid_words_indices,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
+				_, pred, loss, acc, summary_pred, summary_loss = sess.run([train_op,prediction,loss_op, accuracy,summary_op,summary_op2], feed_dict={indices: valid_words_indices,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
+			#print("\n prediction run \n",pred)
+				writer.add_summary(summary_pred,tweet)
+
 			if acc == 1 :
 				t+=1			
 			#if :
@@ -157,9 +152,10 @@ with sess.as_default():
 			step_mins %= 60
 		step_secs = (step_ttl)%60
 		print("Training step "+str(step+1)+" acc: %f"%(t/(tweet+1))+"\tLoss: "+str(loss)+" %i hrs %i mins %.2f secs"%(step_hrs,step_mins,step_secs)+"\n")
-		#print("\nFailed number:\n ",failed_tweets)
 		if loss <= 0.30 or t/len(train_data) >= 0.95:
 			break;
+	print("\nFailed number:\n ",failed_tweets)
+	
 	end = time.time()
 	ttl = end-start
 	hrs = 0
@@ -169,10 +165,11 @@ with sess.as_default():
 		mins %= 60
 	secs = (ttl)%60
 	print("Optimization Finished!")
-	print("Total time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))	
-
-
-#### Testing ####
+	print("Total time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))
+##### TESTING #####
+	test_data = pd.read_csv("test.csv")
+	test_text = test_data['tweet'].copy()
+	test_text2 = test_data['tweet'].copy()
 	pred_hc = []
 	pred_dt = []
 	start = time.time()
@@ -189,7 +186,6 @@ with sess.as_default():
 		if len(valid_words_indices) == 0:
 			pred_hc.append(pred_dt[-1])
 			pred_dt.append(pred_dt[-1])
-
 		if len(valid_words_indices) != 0:
 			valid_words_indices = np.asarray(valid_words_indices).reshape(len(valid_words_indices),1)
 			temp = sess.run(prediction, feed_dict={indices: valid_words_indices})
@@ -210,5 +206,4 @@ with sess.as_default():
 	sys.stdout = open("preds_test.txt","w")
 	for i in range(len(pred_hc)):
 		print(pred_hc[i],",",pred_dt[i])
-
 sys.stdout = sys.__stdout__
