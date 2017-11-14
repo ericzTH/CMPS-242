@@ -10,7 +10,7 @@ import codecs,os,re,time,sys
 import numpy as np
 import pandas as pd
 
-
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 if os.name != 'posix':
 	os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw5")
 train_data = pd.read_csv("train.csv",header = None)
