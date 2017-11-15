@@ -19,8 +19,8 @@ labels_train[0] = labels_train[0].map({'HC':[1,0],'DT':[0,1]})
 test_data = pd.read_csv("test.csv")
 
 # Training Parameters
-learning_rate = 0.001
-training_steps = 300
+learning_rate = 0.01
+training_steps = 1000
 batch_size = 1
 
 text = train_data[0].copy()
@@ -41,7 +41,28 @@ vocab_dict = {}
 for i in range(len(token_list)):
 	if token_list[i] not in vocab_dict:
 		vocab_dict[token_list[i]] = i
+
 vocab_dict['today.'] = vocab_dict['today']
+vocab_dict['Increíble.\nhttps://t.co/PmerodqGzQ'] = vocab_dict['Increíble']
+vocab_dict['Idaho:'] = vocab_dict['Idaho']
+vocab_dict['Hawaii:\nhttps://t.co/MnIlk2l9hP\nIdaho:\nhttps://t.co/7y5RxLpZRQ\nMississippi:\nhttps://t.co/n43cPeJIqa\nMichigan:\nhttps://t.co/GL5JiZbqIc'] = vocab_dict['Hawaii']
+vocab_dict['Mississippi:'] = vocab_dict['Mississippi']
+vocab_dict['Michigan'] = vocab_dict['Michigan']
+vocab_dict['#VoteTrumpMS!'] = vocab_dict['Trump']
+vocab_dict['#Trump2016'] = vocab_dict['Trump']
+vocab_dict['#NeverForget\nhttps://t.co/G5TMAUzy0z'] = vocab_dict['Trump']
+vocab_dict['#VoteTrumpID!'] = vocab_dict['Trump']
+vocab_dict['#VoteTrumpHI!'] = vocab_dict['Trump']
+vocab_dict['#VoteTrumpMI!'] = vocab_dict['Trump']
+vocab_dict['#VoteTrumpMS!'] = vocab_dict['Trump']
+vocab_dict['Trump!'] = vocab_dict['Trump']
+vocab_dict['trump'] = vocab_dict['Trump']
+vocab_dict['Presidential.'] = vocab_dict['Presidential']
+vocab_dict['#WheresHillary?'] = vocab_dict['Trump']
+vocab_dict['#MakeAmericaGreatAgain\n#Trump2016\xa0https://t.co/awow5pyn7n'] = vocab_dict['Trump']
+vocab_dict['today.'] = vocab_dict['today']
+
+
 h_iden = np.identity(len(vocab_dict))
 print("size of TfIdf vocabulary(Number of Unique Words from the data set): ",len(vocab_dict),
 	"\nTotal number of tweets: ",len(text),"\nTotal tweets in test: ",len(test_text))
@@ -53,7 +74,7 @@ tf.reset_default_graph()
 # Network Parameters
 num_input = len(vocab_dict) # number of unique words
 #timesteps = 32 # timesteps
-num_hidden = 32 # LSTM Hidden Layer size
+num_hidden = 16 # LSTM Hidden Layer size
 hidden_unit_size = 16 # Feed Forward NN Hidden Layer size
 num_classes = 2 # neural network output layer
 
@@ -89,7 +110,7 @@ def RNN(indices,weights,biases):
 	# final sigmoidal output (yhat)
 	yhat = tf.reshape(tf.reduce_sum(tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out']),axis = 0),[1,2])
 	return (yhat)	
-embedding_dims = 8
+embedding_dims = 10
 # graph inputs
 
 with tf.name_scope('inputs'):
@@ -100,13 +121,13 @@ with tf.name_scope('xEntropy'):
 	logits = RNN(indices,weights,biases)
 	loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels= Y))
 	prediction = tf.nn.softmax(logits)
-
+	#prediction = tf.nn.softplus(logits)
 with tf.name_scope('optimizer'):
 	optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)		
 	train_op = optimizer.minimize(loss_op)
 
 with tf.name_scope('Accuracy'):
-	#correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
+	correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
 	accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1)), tf.float32))
 
 
@@ -123,8 +144,9 @@ with sess.as_default():
 	sess.run(init) #initializing all the tf variables
 	writer = tf.summary.FileWriter('logs', graph = tf.get_default_graph())
 	#for step in range(training_steps):
-	for step in range(50):
+	for step in range(20):
 		t = 0
+		ttl_loss = 0
 		failed_tweets = 0
 		step_start = time.time()
 		#for tweet in range(10):
@@ -134,13 +156,16 @@ with sess.as_default():
 			for word in range(len(text[tweet].split(' '))):
 				if text[tweet].split(' ')[word] in vocab_dict:
 					valid_words_indices.append(vocab_dict[text[tweet].split(' ')[word]])
-
+			
+			if len(valid_words_indices) == 0:
+				print(tweet)
+				failed_tweets += 1
 			
 			if len(valid_words_indices)!=0:
-				failed_tweets += 1
 				valid_words_indices = np.asarray(valid_words_indices).reshape(len(valid_words_indices),1)
 				_,loss, acc, summary_loss = sess.run([train_op,loss_op, accuracy,summary_op2], feed_dict={indices: valid_words_indices,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
-			#_, pred, loss, acc, summary_pred, summary_loss = sess.run([train_op,prediction,loss_op, accuracy,summary_op,summary_op2], feed_dict={X: matrix1,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
+			#print(pred[0][0],pred[0][1])
+			ttl_loss += loss
 			if acc == 1 :
 				t+=1			
 			#if :
@@ -148,6 +173,7 @@ with sess.as_default():
 			#	print("For tweet "+str(tweet)+" which was said by"+str(labels_train[0][tweet])+"\nprediction of HC: "+str(pred[0][0])+" prediction of DT: "+str(pred[0][1]))	
 		#print("\n matrix1 shape\n",matrix1.shape)	
 		writer.add_summary(summary_loss,tweet)
+		ttl_loss/=len(train_data)
 		step_end = time.time()
 		step_ttl = step_end-step_start
 		step_hrs = 0
@@ -156,9 +182,9 @@ with sess.as_default():
 			step_hrs = mins/60
 			step_mins %= 60
 		step_secs = (step_ttl)%60
-		print("Training step "+str(step+1)+" acc: %f"%(t/(tweet+1))+"\tLoss: "+str(loss)+" %i hrs %i mins %.2f secs"%(step_hrs,step_mins,step_secs)+"\n")
-		#print("\nFailed number:\n ",failed_tweets)
-		if loss <= 0.30 or t/len(train_data) >= 0.95:
+		print("Training step "+str(step+1)+" acc: %f"%(t/(tweet+1))+"\tLoss: "+"%.4f"%(ttl_loss)+" %i hrs %i mins %.2f secs"%(step_hrs,step_mins,step_secs)+"\n")
+		print("\nFailed number:\n ",failed_tweets)
+		if ttl_loss <= 0.35 or t/len(train_data) >= 0.95:
 			break;
 	end = time.time()
 	ttl = end-start
@@ -187,8 +213,8 @@ with sess.as_default():
 				#print(test_text[tweet+26].split(' ')[word])
 				valid_words_indices.append(vocab_dict[test_text[tweet].split(' ')[word]])
 		if len(valid_words_indices) == 0:
-			pred_hc.append(pred_dt[-1])
-			pred_dt.append(pred_dt[-1])
+			pred_hc.append(0.35)
+			pred_dt.append(0.65)
 
 		if len(valid_words_indices) != 0:
 			valid_words_indices = np.asarray(valid_words_indices).reshape(len(valid_words_indices),1)
@@ -207,7 +233,7 @@ with sess.as_default():
 	secs = (ttl)%60
 	print("predicting the data finished!\n")
 	print("time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))	
-	sys.stdout = open("preds_test.txt","w")
+	sys.stdout = open("preds_test_softplus.txt","w")
 	for i in range(len(pred_hc)):
 		print(pred_hc[i],",",pred_dt[i])
 
