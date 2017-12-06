@@ -20,7 +20,7 @@ test_data = pd.read_csv("test.csv")
 
 # Training Parameters
 learning_rate = 0.01
-training_steps = 1000
+training_steps = 500
 batch_size = 1
 
 text = train_data[0].copy()
@@ -74,8 +74,8 @@ tf.reset_default_graph()
 # Network Parameters
 num_input = len(vocab_dict) # number of unique words
 #timesteps = 32 # timesteps
-num_hidden = 16 # LSTM Hidden Layer size
-hidden_unit_size = 16 # Feed Forward NN Hidden Layer size
+num_hidden = 256 # LSTM Hidden Layer size
+hidden_unit_size = 64 # Feed Forward NN Hidden Layer size
 num_classes = 2 # neural network output layer
 
 # Define weights
@@ -99,18 +99,18 @@ def RNN(indices,weights,biases):
 	#print(tf.shape(indices))
 	embedding_mat = tf.get_variable('embedding_matrix',[len(vocab_dict),embedding_dims])
 	x = tf.nn.embedding_lookup(embedding_mat,indices) #,[1,tf.shape(indices),embedding_dims])
-	lstm_cell = tf.contrib.rnn.BasicLSTMCell(num_hidden, forget_bias=1.0)
+	lstm_cell = tf.contrib.rnn.GRUCell(num_hidden)#, forget_bias=1.0)
 	#x = tf.transpose(x)	
 	# Get lstm cell output
 	outputs, state = tf.nn.dynamic_rnn(lstm_cell,x,dtype=tf.float32)
 	# relu activation for ff nn hidden layer
 	print("shape of outputs",outputs.shape)
-	#hidden_layer = tf.nn.dropout(tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.5)
-	hidden_layer = tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l'])
+	hidden_layer = tf.nn.dropout(tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l']),keep_prob = 0.6)
+	#hidden_layer = tf.nn.elu(tf.matmul(outputs[-1][:],weights['h_l']) + biases['h_l'])
 	# final sigmoidal output (yhat)
 	yhat = tf.reshape(tf.reduce_sum(tf.nn.sigmoid(tf.matmul(hidden_layer,weights['out'])+biases['out']),axis = 0),[1,2])
 	return (yhat)	
-embedding_dims = 10
+embedding_dims = 100
 # graph inputs
 
 with tf.name_scope('inputs'):
@@ -127,8 +127,8 @@ with tf.name_scope('optimizer'):
 	train_op = optimizer.minimize(loss_op)
 
 with tf.name_scope('Accuracy'):
-	correct_pred = tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
-	accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1)), tf.float32))
+	correct_pred =  tf.equal(tf.argmax(prediction, 1), tf.argmax(Y, 1))
+	accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
 
 #tf.summary.scalar("Accuracy",accuracy)
@@ -143,8 +143,9 @@ with sess.as_default():
 	# Run the initializer
 	sess.run(init) #initializing all the tf variables
 	writer = tf.summary.FileWriter('logs', graph = tf.get_default_graph())
-	#for step in range(training_steps):
-	for step in range(20):
+	for step in range(training_steps):
+	#for step in range(20):
+		
 		t = 0
 		ttl_loss = 0
 		failed_tweets = 0
@@ -164,6 +165,7 @@ with sess.as_default():
 			if len(valid_words_indices)!=0:
 				valid_words_indices = np.asarray(valid_words_indices).reshape(len(valid_words_indices),1)
 				_,loss, acc, summary_loss = sess.run([train_op,loss_op, accuracy,summary_op2], feed_dict={indices: valid_words_indices,Y: np.asarray(labels_train[0][tweet]).reshape(1,2)})	
+			#print(acc)
 			#print(pred[0][0],pred[0][1])
 			ttl_loss += loss
 			if acc == 1 :
@@ -183,8 +185,8 @@ with sess.as_default():
 			step_mins %= 60
 		step_secs = (step_ttl)%60
 		print("Training step "+str(step+1)+" acc: %f"%(t/(tweet+1))+"\tLoss: "+"%.4f"%(ttl_loss)+" %i hrs %i mins %.2f secs"%(step_hrs,step_mins,step_secs)+"\n")
-		print("\nFailed number:\n ",failed_tweets)
-		if ttl_loss <= 0.35 or t/len(train_data) >= 0.95:
+		#print("\nFailed number:\n ",failed_tweets)
+		if ttl_loss <= 0.31 or t/len(train_data) >= 0.95:
 			break;
 	end = time.time()
 	ttl = end-start
@@ -233,8 +235,9 @@ with sess.as_default():
 	secs = (ttl)%60
 	print("predicting the data finished!\n")
 	print("time taken = %i hours, %i minutes and %.4f seconds"%(hrs,mins, secs))	
-	sys.stdout = open("preds_test_softplus.txt","w")
+	sys.stdout = open("sg_large_emb.txt","w")
+	print("id,HillaryClinton,realDonaldTrump")
 	for i in range(len(pred_hc)):
-		print(pred_hc[i],",",pred_dt[i])
+		print(i,",",pred_hc[i],",",pred_dt[i])
 
 sys.stdout = sys.__stdout__

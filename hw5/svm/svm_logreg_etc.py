@@ -161,7 +161,7 @@ log_pred = np.power(np.e,log_pred)
 f = open("logreg.txt","w")
 f.write("id,realDonaldTrump,HillaryClinton\n")
 for i in range(len(log_pred)):
-	drawProgressBar((i+1)/len(log_pred))
+	drawProgressBar(i/len(log_pred))
 	f.write("{},{:06f},{:06f}\n".format(i,log_pred[i][0],log_pred[i][1]))
 
 
@@ -169,7 +169,7 @@ for i in range(len(log_pred)):
 #for i in range(len(log_pred)):
 #	print(log_pred[i][0],",",log_pred[i][1])
 #sys.stdout = sys.__stdout__
-print("\n_________________________________________________________________________________________")
+print("_________________________________________________________________________________________")
 print("Regularizers:\t"+"|"+"LogReg Training Accuracies:\t|"+"\tLogReg Validation Accuracies:\t")
 print("_________________________________________________________________________________________")
 for i in range(len(c_list)):
@@ -181,7 +181,7 @@ print("_________________________________________________________________________
 def SVM(kernel = 'rbf',c = 1):
 	svc_clf = SVC(kernel = str(kernel),C = c, probability = True, verbose = False)
 	return svc_clf
-### rbf Kernel ###
+
 svm_clf_list = [SVM(c = x) for x in c_list]
 svm_fit_list = [x.fit(x_train,y_train) for x in svm_clf_list]
 svm_train_pred_list = [x.predict(x_train) for x in svm_clf_list]
@@ -189,12 +189,6 @@ svm_train_acc_list = [metrics.accuracy_score(x,y_train) for x in svm_train_pred_
 svm_valid_acc_list = [metrics.accuracy_score(x.predict(x_test),y_test) for x in svm_clf_list]
 log_pred = svm_clf_list[-2].predict_log_proba(test_data_as_matrix)
 log_pred = np.power(np.e,log_pred)
-plt.figure(figsize = (20,15))
-plt.plot(np.log(c_list),svm_train_acc_list,label = 'training with rbf kernel')
-plt.plot(np.log(c_list),svm_valid_acc_list,label = 'validation with rbf kernel')
-plt.legend()
-plt.savefig('svm_rbf.png',bbox_inches='tight')
-plt.title('Training , validation vs log(lambda)')
 f = open("svm_rbf.txt","w")
 f.write("id,realDonaldTrump,HillaryClinton\n")
 for i in range(len(log_pred)):
@@ -207,9 +201,13 @@ print("_________________________________________________________________________
 for i in range(len(c_list)):
 	print("\t"+str(1/c_list[i])+"\t|"+"\t"+str(svm_train_acc_list[i])+"\t"+"\t|"+"\t"+str(svm_valid_acc_list[i]))
 print("___________________________________________________________________________________")
+plt.figure(figsize = (20,15))
+plt.plot(np.log(c_list),svm_train_acc_list,label = 'training with rbf kernel')
+plt.plot(np.log(c_list),svm_valid_acc_list,label = 'validation with rbf kernel')
+plt.legend()
+plt.savefig('svm_rbf.png',bbox_inches='tight')
+plt.title('Training , validation vs log(lambda)')
 
-
-### Linear Kernel ###
 svm_clf_list = [SVM(c = x, kernel = 'linear') for x in c_list]
 svm_fit_list = [x.fit(x_train,y_train) for x in svm_clf_list]
 svm_train_pred_list = [x.predict(x_train) for x in svm_clf_list]
@@ -236,7 +234,6 @@ plt.legend()
 plt.savefig('svm_linear.png',bbox_inches='tight')
 plt.title('Training , validation vs log(lambda) with linear')
 
-### Poly Kernel ###
 svm_clf_list = [SVM(c = x, kernel = 'poly') for x in c_list]
 svm_fit_list = [x.fit(x_train,y_train) for x in svm_clf_list]
 svm_train_pred_list = [x.predict(x_train) for x in svm_clf_list]
@@ -246,7 +243,7 @@ plt.figure(figsize = (20,15))
 plt.plot(np.log(c_list),svm_train_acc_list,label = 'training with poly kernel')
 plt.plot(np.log(c_list),svm_valid_acc_list,label = 'validation with poly kernel')
 plt.legend()
-plt.savefig('svm_poly.png',bbox_inches='tight')
+plt.savefig('svm_linear.png',bbox_inches='tight')
 plt.title('Training , validation vs log(lambda) with poly')
 print("svm poly")
 print("___________________________________________________________________________________")
@@ -255,6 +252,7 @@ print("_________________________________________________________________________
 for i in range(len(c_list)):
 	print("\t"+str(1/c_list[i])+"\t|"+"\t"+str(svm_train_acc_list[i])+"\t"+"\t|"+"\t"+str(svm_valid_acc_list[i]))
 print("___________________________________________________________________________________")
+
 log_pred = svm_clf_list[-2].predict_log_proba(test_data_as_matrix)
 log_pred = np.power(np.e,log_pred)
 f = open("svm_poly.txt","w")
@@ -263,14 +261,12 @@ for i in range(len(log_pred)):
 	drawProgressBar(i/len(log_pred))
 	f.write("{},{:06f},{:06f}\n".format(i,log_pred[i][0],log_pred[i][1]))
 
-
-
-### SIGMOID KERNEL ###
 svm_clf_list = [SVM(c = x, kernel = 'sigmoid') for x in c_list]
 svm_fit_list = [x.fit(x_train,y_train) for x in svm_clf_list]
 svm_train_pred_list = [x.predict(x_train) for x in svm_clf_list]
 svm_train_acc_list = [metrics.accuracy_score(x,y_train) for x in svm_train_pred_list]
 svm_valid_acc_list = [metrics.accuracy_score(x.predict(x_test),y_test) for x in svm_clf_list]
+
 plt.figure(figsize = (20,15))
 plt.plot(np.log(c_list),svm_train_acc_list,label = 'training with sigmoid kernel')
 plt.plot(np.log(c_list),svm_valid_acc_list,label = 'validation with sigmoid kernel')
@@ -284,6 +280,9 @@ print("_________________________________________________________________________
 for i in range(len(c_list)):
 	print("\t"+str(1/c_list[i])+"\t|"+"\t"+str(svm_train_acc_list[i])+"\t"+"\t|"+"\t"+str(svm_valid_acc_list[i]))
 print("___________________________________________________________________________________")
+
+
+
 log_pred = svm_clf_list[-2].predict_log_proba(test_data_as_matrix)
 log_pred = np.power(np.e,log_pred)
 f = open("svm_sigmoid.txt","w")

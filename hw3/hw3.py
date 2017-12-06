@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import pylab as pl
 import seaborn as sns
 #get_ipython().magic('matplotlib inline')
-sys.stdout = open('/media/sanjay/New Volume/Course stuff/Fall 17/CMPS 242/hw3/final results/results.txt',"w")
+#sys.stdout = open('/media/sanjay/New Volume/Course stuff/Fall 17/CMPS 242/hw3/final results/results.txt',"w")
 global_time_init = time.time()
 if os.name != 'posix':
 	os.chdir("M:\Course stuff\Fall 17\CMPS 242\hw3")
